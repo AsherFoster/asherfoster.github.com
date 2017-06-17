@@ -17,4 +17,4 @@ before_install:
 before_script:
   - npm install -g @angular/cli
   - npm install -g karma
-script: npm test && npm run deploy
+script: ng test --single-run && npm run deploy
