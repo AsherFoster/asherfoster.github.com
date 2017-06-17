@@ -31,7 +31,7 @@ echo "INITIALIZING DIST DIRECTORY"
 git clone $REPO dist
 cd dist
 git checkout -b $TARGET_BRANCH origin/$TARGET_BRANCH
-git checkout $TARGET_BRANCH
+#git checkout $TARGET_BRANCH
 cd ..
 
 # Actually build the stuff
