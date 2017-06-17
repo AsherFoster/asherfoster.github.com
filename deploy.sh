@@ -29,7 +29,7 @@ rm -rf out/**/* || exit 0
 
 npm run build
 
-cd out
+cd dist
 git config user.name "Travis CI"
 git config user.email "$COMMIT_AUTHOR_EMAIL"
 
