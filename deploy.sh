@@ -4,6 +4,9 @@
 # I mean, that would have worked fine, but reasons.
 #
 
+echo "TRAVIS_PULL_REQUEST: ${TRAVIS_PULL_REQUEST}"
+echo "TRAVIS_BRANCH: ${TRAVIS_BRANCH}"
+echo "SOURCE_BRANCH: ${SOURCE_BRANCH}"
 
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
   echo "Skipping Deployment"
