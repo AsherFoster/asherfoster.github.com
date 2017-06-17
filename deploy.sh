@@ -30,9 +30,9 @@ fi
 echo "INITIALIZING DIST DIRECTORY"
 git clone $REPO dist
 cd dist
-git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+git checkout -b $TARGET_BRANCH origin/$TARGET_BRANCH
+git checkout $TARGET_BRANCH
 cd ..
-rm -rf dist/**/* || exit 0 # Clear out the dist folder
 
 # Actually build the stuff
 echo "RUNNING BUILD"
