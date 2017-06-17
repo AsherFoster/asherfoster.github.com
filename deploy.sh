@@ -6,7 +6,7 @@
 # Save some useful information
 REPO=`git config remote.origin.url`
 #SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
-SSH_REPO=REPO
+SSH_REPO=$REPO
 SHA=`git rev-parse --verify HEAD`
 TARGET_BRANCH="gh-pages"
 SOURCE_BRANCH="master"
@@ -57,5 +57,5 @@ eval `ssh-agent -s`
 ssh-add ../deployment/key_rsa
 
 # Now that we're all set up, we can push.
-echo "PUSHING TO ${SSH_REPO} // ${TARGET_BRANCH}"
+echo "PUSHING TO: ${SSH_REPO} // ${TARGET_BRANCH}"
 git push $SSH_REPO $TARGET_BRANCH
