@@ -17,7 +17,7 @@ fi
 SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 REPO=`git config remote.origin.url`
-SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
+SSH_REPO=REPO
 SHA=`git rev-parse --verify HEAD`
 
 git clone $REPO dist
