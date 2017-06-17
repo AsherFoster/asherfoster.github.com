@@ -1,0 +1,21 @@
+sudo: required
+dist: xenial
+language: node_js
+node_js: '8'
+apt:
+  sources:
+  - google-chrome
+  packages:
+  - google-chrome-stable
+  - google-chrome-beta
+before_install:
+  - openssl aes-256-cbc -K $encrypted_aaedf3c479a5_key -iv $encrypted_aaedf3c479a5_iv -in deployment/key_rsa.enc -out deployment/key_rsa -d
+  - export CHROME_BIN=chromium-browser
+  - export DISPLAY=:99.0
+  - sh -e /etc/init.d/xvfb start
+  - sleep 3
+before_script:
+  - npm install -g @angular/cli
+  - npm install -g karma
+  - npm install
+script: npm test && npm run deploy
