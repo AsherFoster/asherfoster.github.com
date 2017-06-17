@@ -44,13 +44,14 @@ git config user.name "Travis CI"
 git config user.email "travis@asherfoster.com"
 
 # Commit the changes
+echo "ACTUALLY COMMITING THE CHANGES"
 git add -A .
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
 # Adding the ssh key from the decrypted file
 echo "ADDING SSH KEY"
 eval `ssh-agent -s`
-ssh-add deployment/key_rsa
+ssh-add ../deployment/key_rsa
 
 # Now that we're all set up, we can push.
 echo "PUSHING TO ${SSH_REPO} // ${TARGET_BRANCH}"
