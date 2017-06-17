@@ -3,7 +3,11 @@ dist: xenial
 language: node_js
 node_js: '8'
 addons:
-  chrome: stable
+  apt:
+    sources:
+      - google-chrome
+    packages:
+      - google-chrome-stable
 before_install:
   - openssl aes-256-cbc -K $encrypted_aaedf3c479a5_key -iv $encrypted_aaedf3c479a5_iv -in deployment/key_rsa.enc -out deployment/key_rsa -d
   - export CHROME_BIN=chromium-browser
