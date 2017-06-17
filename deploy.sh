@@ -41,7 +41,7 @@ echo "BUILD COMPLETED: NOW DEPLOYING"
 
 cd dist
 git config user.name "Travis CI"
-git config user.email "$COMMIT_AUTHOR_EMAIL"
+git config user.email "travis@asherfoster.com"
 
 # Commit the changes
 git add -A .
