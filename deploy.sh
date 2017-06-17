@@ -26,16 +26,16 @@ fi
 
 
 
-
+# Initialize this dist directory
+echo "INITIALIZING DIST DIRECTORY"
 git clone $REPO dist
 cd dist
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
-
-# Clear out the dist folder
-rm -rf dist/**/* || exit 0
+rm -rf dist/**/* || exit 0 # Clear out the dist folder
 
 # Actually build the stuff
+echo "RUNNING BUILD"
 npm run build
 
 
@@ -45,9 +45,10 @@ echo "BUILD COMPLETED: NOW DEPLOYING"
 cd dist
 git config user.name "Travis CI"
 git config user.email "travis@asherfoster.com"
+git remote add orgin $SSH_REPO
 
 # Commit the changes
-echo "ACTUALLY COMMITING THE CHANGES"
+echo "ACTUALLY COMMITTING THE CHANGES"
 git add -A .
 git commit -m "Deploy to GitHub Pages: ${SHA}"
 
@@ -58,4 +59,4 @@ ssh-add ../deployment/key_rsa
 
 # Now that we're all set up, we can push.
 echo "PUSHING TO: ${SSH_REPO} // ${TARGET_BRANCH}"
-git push $SSH_REPO $TARGET_BRANCH
+git push origin $TARGET_BRANCH
