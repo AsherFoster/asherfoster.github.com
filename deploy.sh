@@ -12,7 +12,7 @@ echo "TRAVIS_BRANCH: ${TRAVIS_BRANCH}"
 echo "SOURCE_BRANCH: ${SOURCE_BRANCH}"
 echo "TARGET_BRANCH: ${TARGET_BRANCH}"
 
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != $TARGET_BRANCH ]; then
+if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != $SOURCE_BRANCH ]; then
   echo "Skipping Deployment"
   exit 0
 fi
