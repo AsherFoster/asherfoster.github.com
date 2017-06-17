@@ -3,7 +3,8 @@
 # Adapted from https://gist.github.com/domenic/ec8b0fc8ab45f39403dd
 # I mean, that would have worked fine, but reasons.
 #
-TARGET_BRANCH="master"
+TARGET_BRANCH="gh-pages"
+SOURCE_BRANCH="master"
 
 
 echo "TRAVIS_PULL_REQUEST: ${TRAVIS_PULL_REQUEST}"
@@ -17,8 +18,6 @@ if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != $TARGET_BRANCH ]; 
 fi
 
 # Save some useful information
-SOURCE_BRANCH="master"
-TARGET_BRANCH="gh-pages"
 REPO=`git config remote.origin.url`
 SSH_REPO=REPO
 SHA=`git rev-parse --verify HEAD`
