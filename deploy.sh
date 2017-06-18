@@ -8,8 +8,8 @@ REPO=`git config remote.origin.url`
 #SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
 SSH_REPO=$REPO
 SHA=`git rev-parse --verify HEAD`
-TARGET_BRANCH="gh-pages"
-SOURCE_BRANCH="master"
+TARGET_BRANCH="master"
+SOURCE_BRANCH="source"
 
 
 echo "TRAVIS_PULL_REQUEST: ${TRAVIS_PULL_REQUEST}"
