@@ -1,0 +1,72 @@
+==================================================================
+https://keybase.io/asherfoster
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://asherfoster.com
+  * I am asherfoster (https://keybase.io/asherfoster) on keybase.
+  * I have a public key with fingerprint 52DD 2ADA 5366 C603 FCE3  0F83 BBF3 B71E 251B F0C7
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "eldest_kid": "01012c7f27120ed441a1aacff48354a4e6fdc1395e8984b9d4f5579f15c141b7b46b0a",
+            "fingerprint": "52dd2ada5366c603fce30f83bbf3b71e251bf0c7",
+            "host": "keybase.io",
+            "key_id": "bbf3b71e251bf0c7",
+            "kid": "01012c7f27120ed441a1aacff48354a4e6fdc1395e8984b9d4f5579f15c141b7b46b0a",
+            "uid": "5fe1a8c02da8eff3bc198f922ed11b19",
+            "username": "asherfoster"
+        },
+        "service": {
+            "hostname": "asherfoster.com",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1492746584,
+    "expire_in": 157680000,
+    "prev": "735ec210f9c83b842a010e7f36f5164e1245ed26b23be967b4f1a7a015b8c8ba",
+    "seqno": 4,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+
+owGtkmlMXFUYhmdYhwEiWgoEKLaXjGnDkrsvw9YqIa3W/qBWIUCmdzkXroW503sH
+CuI4iLXalqSroCyWqDiktHFJEWUQHILQgooBKzWkVqgUKogQymaa1jtEf+lPz5+T
+c77nfb/vvDmnQ311Rr17qSPOFLMwoB+6y+ly1l+1VEKcLFRA5kroENjYQLEAVLvl
+kCRAZghGYATlKRGlEBQGAo4jLMKyvCjiNEbgLA5IUeARjCEAzdA4xwi4SBAUIyIE
+j+AIR3E4ycEslAiJkrUQKDZFsto1WwIVBJQVWAIjSZ6EMZEHGCzSGMeJGEchACUQ
+ToR5ShMWyapXoQ3HsSpIlmTtTjtYNsb7D/5/nrt0w44QAcLSPIwKLA1ErSePMLTI
+oCgQEIRDGC+oAsXKlgCNZtUioIja3ECBHImQViiTeODN1vuYf0PJvFyiOdgU2S7z
+crFWLLLbbWav1l5h88JHAGf528bCSVZBC1MTlAFFlWQrZEY0krdLXl8EZ1AKJwka
+T4RAuU1SgEXyEgRF0rC2vG1AmWZJYQUE4FEEFhleC57GUVYLDVAiRooEQuIAQXEC
+CCjJoRgHGFKLRERYSoMIjuZpzhuOCg5bZcistbKzhZqnKhVaWXupAiCH8bhPrJ9O
+b9QF+Pt4v5nOGBT2z987i4XpGjO2t219Y/941+e975g+bH1pPnXqGTzrjtN0J+n2
+C4sDf/gPrTa+bow4HzG6uphXU2WcM+W+/eTzLxpuu8Y+SvqidKT6vucBf/DNeZ/2
+g46gV5QVz1Mfn1riIndeS8lbyzr1jfOob/VKyMXI7s0/Fva/d3Ns91QNERATsv7l
+8Mlf92SE3GtQUlYH0+jN3za5WrozPTk349K7J2BXe/1XuyeOz1hbqtrWvwvc1Wxq
+Otr9mX3mg3kwuq969H75eGtSP3+F+anPdRYL0Scv+ns2rfcsZxv8PAbD4aG+yNb0
+kC1mpXzlxOCxnqbEkfWC6F+grtzpqOloYnKiePVWIwCPxrsW2q5EJ2S19oZujR9f
+eKJBjPNZLjDM9LjH1JnZzHPnKh+ujbXUPTbXUTfoQJt1xa8F50clLyU9bQ3udwzL
+KXnO4OH0Stu2T3Zi5q8/HfzeFfTctVzVd5e++RJV0VH9w4MBdSzBfCHtpDN1qM59
+fW0vlPM+PetD/lbl/pOLjbxUk1mYldbz7M87Apw3dmRHZIQHxszFYleP5IdGOcxX
+Ox/vhN6KnJb2/g7fvby8L7W+0nD6nuVMYl1+rdtvqkF/Jt5kq+1++dgj4XXnO3W+
+E7Mg5mLCyP72E/XNy+FT27Zfn+zKtr57obhiS3+J54Cz0xNG9wfWVh2o1fVtmnyo
+yL3q5Vuhbs+NvwA=
+=fYSY
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/asherfoster
+
+==================================================================
