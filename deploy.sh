@@ -41,4 +41,4 @@ eval `ssh-agent -s`
 ssh-add deployment/key_rsa
 
 echo "BUILD COMPLETED: NOW DEPLOYING"
-angular-cli-ghpages --message="Automatic Deployment via Travis CI" --repo=git@github.com:${TRAVIS_REPO_SLUG}.git --no-silent
+angular-cli-ghpages --message="Automatic Deployment via Travis CI" --repo=git@github.com:${TRAVIS_REPO_SLUG}.git --branch=master
