@@ -19,8 +19,12 @@ echo "SSH_REPO: ${SSH_REPO}"
 echo "SOURCE_BRANCH: ${SOURCE_BRANCH}"
 echo "TARGET_BRANCH: ${TARGET_BRANCH}"
 
-if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != $SOURCE_BRANCH ]; then
-  echo "Skipping Deployment"
+if [ "$TRAVIS_PULL_REQUEST" != "false" ]; then
+  echo "Skipping Deployment, PR build"
+  exit 0
+fi
+if [ "$TRAVIS_BRANCH" != $SOURCE_BRANCH ]; then
+  echo "Skipping Deployment, non-main branch"
   exit 0
 fi
 
@@ -37,4 +41,4 @@ eval `ssh-agent -s`
 ssh-add deployment/key_rsa
 
 echo "BUILD COMPLETED: NOW DEPLOYING"
-angular-cli-ghpages --message="Automatic Deployment via Travis CI" --no-silent
+angular-cli-ghpages --message="Automatic Deployment via Travis CI" --repo=git@github.com:${TRAVIS_REPO_SLUG}.git --no-silent
