@@ -18,6 +18,6 @@ before_install:
   - sh -e /etc/init.d/xvfb start
 
 before_script:
-  - npm install -g @angular/cli karama angular-cli-ghpages
+  - npm install -g @angular/cli karma angular-cli-ghpages
 
 script: ng test --single-run && npm run deploy
