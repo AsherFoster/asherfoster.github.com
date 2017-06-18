@@ -34,7 +34,7 @@ ng build --prod --base-href="https://asherfoster.com"
 # Adding the ssh key from the decrypted file
 echo "ADDING SSH KEY"
 eval `ssh-agent -s`
-ssh-add ../deployment/key_rsa
+ssh-add deployment/key_rsa
 
 echo "BUILD COMPLETED: NOW DEPLOYING"
-angular-cli-ghpages --message="Automatic Deployment via Travis CI"
+angular-cli-ghpages --message="Automatic Deployment via Travis CI" --no-silent
