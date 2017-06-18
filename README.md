@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/AsherFoster/asherfoster.github.com.svg?branch=master)](https://travis-ci.org/AsherFoster/asherfoster.github.com)
 # Asherfoster
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.1.2.
