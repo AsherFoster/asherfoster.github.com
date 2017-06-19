@@ -1,7 +1,7 @@
 <div class="bg"></div>
-<div class="splash">
-  <h2>Hello.</h2>
+<div class="splash" fxLayout="column" fxLayoutAlign="center center">
   <div class="splash-text">
+    <h2>Hello.</h2>
     <p>I'm Asher</p>
     <a md-button routerLink="/about">Who?</a>
   </div>
@@ -13,7 +13,7 @@
       <md-list-item *ngFor="let repo of repos">
         <h4 md-line>{{repo.name}}</h4>
         <p md-line>{{repo.shortenedDescription}}</p>
-        <i *ngIf="repo.language">{{repo.language}}</i>
+        <code class="language" *ngIf="repo.language">{{repo.language}}</code>
         <a md-icon-button target="_blank" [href]="repo.html_url">
           <md-icon svgIcon="github"></md-icon>
         </a>
@@ -25,5 +25,6 @@
   </div>
   <div fxFlex>
     <h3>Other thing goes here</h3>
+    <p>I probably won't put something here, ever.</p>
   </div>
 </div>

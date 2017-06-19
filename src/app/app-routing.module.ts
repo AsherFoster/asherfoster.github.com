@@ -19,6 +19,10 @@ const routes: Routes = [
     component: AboutComponent
   },
   {
+    path: 'experiments',
+    loadChildren: 'app/experiments/experiments.module#ExperimentsModule'
+  },
+  {
     path: '**',
     component: NotfoundComponent
   }

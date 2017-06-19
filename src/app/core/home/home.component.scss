@@ -3,8 +3,7 @@
 $splash-background: url("/assets/background.jpg");
 
 .splash{
-  height: calc(80vh - 50px);
-  padding-top: 10vh;
+  height: 80vh;
   text-align: center;
   background: $splash-background left no-repeat;
   background-size: cover;
@@ -13,10 +12,15 @@ $splash-background: url("/assets/background.jpg");
 
   .splash-text{
     margin-top: 1em;
-    font-size: 2em;
-  }
-  h2{
-    font-size: 7em;
+
+    h2{
+      font-size: 7em;
+      margin: 5vh 0;
+    }
+
+    p{
+      font-size: 2em;
+    }
   }
 }
 
@@ -25,5 +29,9 @@ $splash-background: url("/assets/background.jpg");
   .loading{
     text-align: center;
     margin: 1em auto;
+  }
+
+  .language{
+    font-family: monospace;
   }
 }

@@ -1,0 +1,5 @@
+<af-title>Experimental Experiments</af-title>
+<p>This is where I mess around with various web technologies, trying out random things</p>
+<md-nav-list>
+  <a md-list-item [routerLink]="'/experiments/' + i" *ngFor="let link of experiments; let i = index">Experiment #{{i}}</a>
+</md-nav-list>

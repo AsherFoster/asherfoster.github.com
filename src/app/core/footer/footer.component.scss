@@ -4,8 +4,11 @@ footer{
   color: #FFF;
   padding: 1em;
 
-  *{
+  > *{
     margin: 1em;
     display: inline-block;
+  }
+  a md-icon {
+    margin-right: 8px;
   }
 }
