@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Http} from '@angular/http';
 import {Observable} from 'rxjs/Observable';
-
+import 'rxjs/add/operator/map'
 const repoApiUrl = 'https://api.github.com/users/asherfoster/repos?sort=updated';
 
 interface GithubRepo {
