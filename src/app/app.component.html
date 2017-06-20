@@ -1,3 +1,3 @@
-<af-header></af-header>
+<af-header *ngIf="!hideNav"></af-header>
 <router-outlet></router-outlet>
-<af-footer></af-footer>
+<af-footer *ngIf="!hideNav"></af-footer>
