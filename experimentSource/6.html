@@ -12,16 +12,12 @@
       /* Falling animation from https://codepen.io/alemesre/pen/hAxGg */
       .falling-unicorn{
         position: absolute;
-      }
-      @-webkit-keyframes fall {
-        to {
-          top: calc(100vh)
-        }
-      }
-      @-moz-keyframes fall {
-        to {
-          top: calc(100vh)
-        }
+        -webkit-transition-property: top;
+        -moz-transition-property: top;
+        transition-property: top;
+        -webkit-transition-timing-function: ease-in;
+        -moz-transition-timing-function: ease-in;
+        transition-timing-function: ease-in;
       }
     </style>
   </head>
@@ -29,9 +25,9 @@
     <div id="background-wrapper"></div>
     <script>
       // Constants
-      const maxUnicornSize = 200;
-      const spawnInterval = 300;
-
+      const maxUnicornSize = 250;
+      const spawnInterval = 200;
+      const fallSpeed = 2000;
 
 
 
@@ -39,7 +35,7 @@
       const wrapper = document.getElementById("background-wrapper");
       let masterUnicorn = document.createElement("img"); // Obey the Master Unicorn, or else
       masterUnicorn.className = "falling-unicorn";
-      masterUnicorn.src = "/img/unicorn.png";
+      masterUnicorn.src = "/assets/img/unicorn.png";
 
       const docWidth = document.body.clientWidth;
       const docHeight = document.body.clientHeight;
@@ -47,20 +43,23 @@
       function generateUnicorn(){
         const unicorn = masterUnicorn.cloneNode(false);
         const size = random(maxUnicornSize, 30);
-        const lifetime = random(10000, 2000);
 
         unicorn.style.top = "-" + size + "px";
         unicorn.style.width = size + "px";
         unicorn.style.height = size + "px";
         unicorn.style.left = randomPx(docWidth);
-        unicorn.style.webkitAnimation = "fall 3s ease-in";
-        unicorn.style.mozAnimation = "fall 3s linear";
+        unicorn.style.transitionDuration = fallSpeed + 'ms';
+        unicorn.style.mozTransitionDuration = fallSpeed + 'ms';
+        unicorn.style.webkitTransitionDuration = fallSpeed + 'ms';
 
         wrapper.appendChild(unicorn);
 
         setTimeout(function(){
-          wrapper.removeChild(unicorn);
-        }, lifetime + 100)
+          unicorn.style.top = '100vh';
+          setTimeout(() => {
+            wrapper.removeChild(unicorn);
+          }, fallSpeed);
+        }, 1)
       }
 
       // Helper functions
