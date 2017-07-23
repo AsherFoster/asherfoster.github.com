@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./experiments.component.scss']
 })
 export class ExperimentsComponent implements OnInit {
-  experiments = new Array(5);
+  experiments = new Array(7);
 
   constructor() { }
 
