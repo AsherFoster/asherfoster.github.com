@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Location } from '@angular/common';
 import {DomSanitizer} from '@angular/platform-browser';
 import {ActivatedRoute} from '@angular/router';
+import {Router} from '@angular/router';
+
 @Component({
   selector: 'af-experiment-view',
   templateUrl: './experiment-view.component.html',
@@ -9,14 +11,20 @@ import {ActivatedRoute} from '@angular/router';
 })
 export class ExperimentViewComponent implements OnInit {
   url: any;
+  ex: string;
   back() {
     this.location.back();
   }
-  constructor(private route: ActivatedRoute, private sanitizer: DomSanitizer, private location: Location) {
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private sanitizer: DomSanitizer,
+    private location: Location
+  ) {
+    this.ex = route.snapshot.params['id'];
   }
 
   ngOnInit() {
-    this.url = this.sanitizer.bypassSecurityTrustResourceUrl('/experimentSource/' + this.route.snapshot.params['id'] + '.html');
+    this.url = this.sanitizer.bypassSecurityTrustResourceUrl('/experimentSource/' + this.ex + '.html');
   }
-
 }

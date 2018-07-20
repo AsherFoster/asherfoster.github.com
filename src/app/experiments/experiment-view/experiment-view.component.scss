@@ -1,5 +1,11 @@
-.view {
-  border: none;
+:host {
+  display: flex;
+  flex-direction: column;
   width: 100vw;
-  height: calc(100vh - 64px);
+  height: 100vh;
+  overflow: hidden;
+}
+iframe {
+  border: none;
+  flex: 1;
 }

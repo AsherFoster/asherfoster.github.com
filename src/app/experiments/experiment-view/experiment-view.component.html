@@ -1,9 +1,7 @@
-<md-toolbar>
-  <a md-icon-button (click)="back()" mdTooltip="Back">
-    <md-icon>arrow_back</md-icon>
+<mat-toolbar>
+  <a mat-icon-button (click)="back()" matTooltip="Back">
+    <mat-icon>arrow_back</mat-icon>
   </a>
-</md-toolbar>
-<iframe [src]="url" class="view">
-</iframe>
-<!--<h3>WIP: Coming soon</h3>-->
-
+  <span>Experiment #{{ex}}</span>
+</mat-toolbar>
+<iframe [src]="url" class="view"></iframe>

@@ -15,7 +15,7 @@ addons:
       - google-chrome-stable
 
 before_install:
-  - openssl aes-256-cbc -K $encrypted_aaedf3c479a5_key -iv $encrypted_aaedf3c479a5_iv -in deployment/key_rsa.enc -out deployment/key_rsa -d
+  - openssl aes-256-cbc -K $encrypted_829172ed9bb8_key -iv $encrypted_829172ed9bb8_iv -in deploy.enc -out deployment/deploy -d
   - chmod 400 deployment/key_rsa # To prevent the thing from being a pain
   - export CHROME_BIN=chromium-browser
   - export DISPLAY=:99.0

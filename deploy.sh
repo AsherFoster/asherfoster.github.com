@@ -30,7 +30,7 @@ fi
 
 # Actually build the stuff
 echo "RUNNING BUILD"
-ng build --prod --base-href="https://asherfoster.com"
+ng build --prod --base-href="https://asherfoster.com" --aot
 
 
 

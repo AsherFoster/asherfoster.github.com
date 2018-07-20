@@ -3,35 +3,41 @@
 $splash-background: url("/assets/background.jpg");
 
 .splash{
-  height: 80vh;
+  height: 70vh;
   text-align: center;
   background: $splash-background left no-repeat;
   background-size: cover;
   color: #FFF;
-  font-weight: 100;
 
   .splash-text{
-    margin-top: 1em;
-
-    h2{
+    h1{
       font-size: 7em;
       margin: 5vh 0;
     }
 
     p{
+      margin-top: 2em;
+      font-weight: 100;
       font-size: 2em;
     }
   }
 }
-
+.main {
+  h3 {
+    margin: 20px 0;
+    text-align: center;
+  }
+}
 .repos{
-
   .loading{
     text-align: center;
-    margin: 1em auto;
+    margin: 200px auto;
   }
 
   .language{
     font-family: monospace;
   }
+}
+mat-card {
+  margin: 16px;
 }

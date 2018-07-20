@@ -1,20 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-@import '~@angular/material/theming';
+//@import '~@angular/material/theming';
 @import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
 @import url('https://fonts.googleapis.com/css?family=Roboto:400,400i');
 
 html, body{
   margin: 0;
-  font-family: $mat-font-family;
-}
-
-
-h2{
-  font-size: 4em;
-  font-weight: 100;
-}
-h3{
-  font-size: 2em;
-  margin-left: 0.5em;
-  font-weight: 100;
 }

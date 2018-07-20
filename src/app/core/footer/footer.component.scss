@@ -2,13 +2,20 @@ footer{
   text-align: center;
   background: #5E35B1;
   color: #FFF;
+  margin-top: 50px;
   padding: 1em;
 
   > *{
     margin: 1em;
     display: inline-block;
   }
-  a md-icon {
-    margin-right: 8px;
+  .source-link {
+    color: #FFF;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  footer > * {
+    margin: 2px;
   }
 }

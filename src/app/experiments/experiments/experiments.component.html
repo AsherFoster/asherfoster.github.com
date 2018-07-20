@@ -1,5 +1,10 @@
 <af-title>Experimental Experiments</af-title>
-<p>This is where I mess around with various web technologies, trying out random things</p>
-<md-nav-list>
-  <a md-list-item [routerLink]="'/experiments/' + i" *ngFor="let link of experiments; let i = index">Experiment #{{i}}</a>
-</md-nav-list>
+<div class="text">
+  <p>
+    I like to make lots of small projects. Here's where I stick lots of the web based ones.<br>
+    Be warned: I build them to work, not to look good
+  </p>
+  <mat-nav-list>
+    <a mat-list-item [routerLink]="'/experiments/' + i" *ngFor="let link of experiments; let i = index">Experiment #{{i}}</a>
+  </mat-nav-list>
+</div>

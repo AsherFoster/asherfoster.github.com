@@ -1,4 +1,6 @@
 # See http://help.github.com/ignore-files/ for more about ignoring files.
+deployment/deploy
+# This time, let's not commit that.
 
 # compiled output
 /dist
