@@ -4,12 +4,16 @@
     <meta charset="UTF-8">
     <title>Developster 404</title>
     <style>
+      html, body {
+        margin: 0;
+        overflow: hidden;
+      }
+
       #background-wrapper{
         height: 100vh;
         width: 100vw;
       }
 
-      /* Falling animation from https://codepen.io/alemesre/pen/hAxGg */
       .falling-unicorn{
         position: absolute;
         -webkit-transition-property: top;
@@ -29,9 +33,6 @@
       const spawnInterval = 200;
       const fallSpeed = 2000;
 
-
-
-
       const wrapper = document.getElementById("background-wrapper");
       let masterUnicorn = document.createElement("img"); // Obey the Master Unicorn, or else
       masterUnicorn.className = "falling-unicorn";
@@ -44,10 +45,10 @@
         const unicorn = masterUnicorn.cloneNode(false);
         const size = random(maxUnicornSize, 30);
 
-        unicorn.style.top = "-" + size + "px";
+        unicorn.style.top = -size + "px";
         unicorn.style.width = size + "px";
         unicorn.style.height = size + "px";
-        unicorn.style.left = randomPx(docWidth);
+        unicorn.style.left = (random(docWidth, size) - size) + "px";
         unicorn.style.transitionDuration = fallSpeed + 'ms';
         unicorn.style.mozTransitionDuration = fallSpeed + 'ms';
         unicorn.style.webkitTransitionDuration = fallSpeed + 'ms';
@@ -59,13 +60,9 @@
           setTimeout(() => {
             wrapper.removeChild(unicorn);
           }, fallSpeed);
-        }, 1)
+        }, 10)
       }
 
-      // Helper functions
-      function randomPx(max, min){
-        return random(max, min) + "px";
-      }
       function random(max, min){
         if(min)
           return Math.floor(Math.random() * (max - min)) + min;
