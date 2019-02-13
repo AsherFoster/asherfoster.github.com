@@ -21,6 +21,14 @@ header a {
     padding: 18px;
 }
 
+#header-bg {
+    z-index: -1;
+    background: #169BE9;
+    position: absolute;
+    width: 100vw;
+    height: 55px;
+}
+
 a {
     font-family: 'Roboto Mono', 'Courier Sans', monospace;
     color: inherit;
@@ -44,18 +52,52 @@ a {
     -moz-transform: skewY(-15deg);
     transform: skewY(-15deg);
 }
+.stripe-triangle {
+    position: absolute;
+    z-index: -1;
+    width: 0;
+    height: 0;
+    border-style: solid;
+}
+#stripe-0a {
+    top: 55px;
+    border-width: 0 100vw calc(200px) 0;
+    border-color: transparent #169BE9 transparent transparent;
+}
 #stripe-1 {
-    height: 330px;
+
 }
-#stripe-2 {
-    background: #2CB9FF;
-}
+/*#stripe-1a {*/
+    /*top: 0;*/
+    /*left: 0;*/
+    /*border-width: 0 0 calc(50vh - 90px) calc(100vw - 300px);*/
+    /*border-color: transparent transparent #2CB9FF;*/
+/*}*/
+/*#stripe-1b {*/
+    /*background: #2CB9FF;*/
+    /*position: absolute;*/
+    /*right: 0;*/
+    /*z-index: -1;*/
+    /*width: 300px;*/
+    /*height: calc(50vh - 90px);*/
+/*}*/
+/*#stripe-1c {*/
+    /*top: calc(50vh + 110px);*/
+    /*left: 0;*/
+    /*border-width: 206px 100vw 0 0;*/
+    /*border-color: #2CB9FF transparent transparent transparent;*/
+/*}*/
 #stripe-3 {
     height: 700px;
 }
 #stripe-4 {
     background: #65BFF4;
     height: 700px;
+}
+
+.splash-text {
+    width: 100vw;
+    background: #2CB9FF;
 }
 
 .section {
@@ -95,6 +137,7 @@ a {
 }
 #section-1 .splash-text {
     top: calc(50vh - 90px);
+    height: 200px;
     text-align: center;
 }
 
