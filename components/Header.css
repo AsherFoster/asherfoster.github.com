@@ -1,9 +1,12 @@
 header {
-    z-index: 1;
-    position: absolute;
     display: flex;
+}
+header.absolute {
+    z-index: 1;
     width: 100vw;
+    position: absolute;
 }
 header a {
+    color: #FFF;
     padding: 18px;
 }

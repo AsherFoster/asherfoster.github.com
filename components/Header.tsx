@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import styles from './Header.css';
 
-const Header = () => (
-  <header>
+const Header = (props) => (
+  <header className={props.block ? '' : 'absolute'}>
     <Link href='/'>
       <a className='nohover'>Asher Foster</a>
     </Link>

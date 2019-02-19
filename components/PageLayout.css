@@ -1,0 +1,47 @@
+.backdrop {
+    z-index: -1;
+    position: absolute;
+    width: 100vw;
+}
+
+#top-section-stripe-1 {
+    top: 0;
+    width: 0;
+    position: absolute;
+    border-style: solid;
+    border-width: calc(0.17632698070846498 * (100vw - 200px)) 100vw 0 0;
+    border-color: #058CDC transparent transparent transparent;
+}
+
+#top-section-stripe-2 {
+    height: 300px;
+    -webkit-transform: skewY(-10deg);
+    -moz-transform: skewY(-10deg);
+    transform: skewY(-10deg);
+    background: #169BE9;
+    top: calc(0.17632698070846498 * calc(50vw - 300px));
+    box-shadow: 0 5px 16px 0 rgba(0,0,0,0.5);
+}
+
+#top-section {
+    padding-top: calc(0.17632698070846498 * (50vw + 10px));
+    height: calc(200px + 0.17632698070846498 * 80vw);
+}
+#top-section-text h1, #top-section-text h2 {
+    margin: 1em 0 0;
+    text-align: center;
+    color: #FFF;
+    font-weight: 100;
+    font-size: 50px;
+}
+
+#top-section-text h2 {
+    margin-top: 10px;
+    font-size: 24px;
+}
+
+@media screen and (max-width: 600px) {
+    #top-section-stripe-2 {
+        top: -10px;
+    }
+}
