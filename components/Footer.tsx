@@ -21,25 +21,7 @@ const Footer = () => (
     </div>
     <style jsx>
       {`
-      footer {
-        color: #FFF;
-        font-family: 'Roboto Mono', 'Courier Sans', monospace;
-      }
-      #footer-stripe {
-        width: 0;
-        height: 0;
-        border-style: solid;
-        border-width: 0 0 100px 100vw;
-        border-color: transparent transparent #058CDC transparent;
-        z-index: -2;
-      }
-      .footer-text {
-        display: flex;
-        background: #058CDC;
-      }
-      .footer-text * {
-        margin: 18px;
-      }
+
       `}
     </style>
   </footer>

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import styles from './Header.css';
 
 const Header = () => (
   <header>
@@ -15,6 +16,7 @@ const Header = () => (
     <Link href='/contact'>
       <a className='header-link'>Contact</a>
     </Link>
+    <style jsx>{styles}</style>
   </header>
 );
 

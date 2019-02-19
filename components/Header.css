@@ -1,0 +1,9 @@
+header {
+    z-index: 1;
+    position: absolute;
+    display: flex;
+    width: 100vw;
+}
+header a {
+    padding: 18px;
+}
