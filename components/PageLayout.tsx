@@ -1,14 +1,15 @@
+import React from 'react';
+import Router from 'next/router';
+import Head from 'next/head';
 import Header from './Header';
 import Footer from './Footer';
 import rootStyles from './root.css';
 import styles from './PageLayout.css';
-import Head from 'next/head';
 
 const PageLayout = (props) => (
   <React.Fragment>
     <Head>
       <title>Asher Foster{props.title ? ` - ${props.title}` : ''}</title>
-      <meta name='viewport' content='width=device-width, initial-scale=1'/>
     </Head>
     <Header/>
     <div id='top-section'>
