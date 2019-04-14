@@ -1,5 +1,15 @@
 /* @styled-jsx=global */
-@import "https://fonts.googleapis.com/css?family=Open+Sans|Roboto+Mono:400,500";
+/* ASSUME IN LIGHT THEME! */
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700i|Playfair+Display:700');
+
+:root {
+    --bg-dark: #222;
+    --bg-light: #FFF;
+    --text-dark: #FFF;
+    --text-light: #000;
+    --link-dark: #70D9FF;
+    --link-light: #25A7FB;
+}
 
 * {
     position: relative;
@@ -7,28 +17,97 @@
 
 html, body {
     margin: 0;
-    font-family: 'Open Sans', 'Arial', sans-serif;
+    font-family: 'Nunito Sans', 'Arial', sans-serif;
     overflow-x: hidden;
 }
-body {
-    overflow: visible;
+
+body.lock-scroll > div {
+    overflow: hidden;
 }
 
 .flex {
     flex: 1;
 }
 
-a {
-    font-family: 'Roboto Mono', 'Courier Sans', monospace;
-    color: inherit;
+.button-reset {
+    border: none;
+    background: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+
+/* ******************** */
+/* ******************** */
+/*  Light/Dark theming  */
+/* ******************** */
+/* ******************** */
+.theme-dark {
+    background: var(--bg-dark);
+    color: var(--text-dark);
+}
+
+.theme-light {
+    background: var(--bg-light);
+    color: var(--text-light);
+}
+
+/* ******************** */
+/* ******************** */
+/*      Typography      */
+/* ******************** */
+/* ******************** */
+h1, .font-display, .h1 {
+    font-family: 'Playfair Display', 'Georgia', serif;
+    font-weight: bold;
+}
+h1, .h1 {
+    letter-spacing: 2px;
+    font-size: 56px;
+}
+a, .theme-light a {
     text-decoration: none;
 }
-a:hover:not(.nohover) {
+a {
+    color: inherit;
+}
+a:not(.subtle) {
+    font-weight: bold;
+    font-style: italic;
+    color: var(--link-light);
+}
+.theme-dark a:not(.subtle) {
+    color: var(--link-dark);
+}
+a:hover:not(.nounderline) {
     text-decoration: underline;
 }
 
+a.arrow {
+    text-decoration: underline;
+}
+a.arrow:after {
+    content: '▸';
+    font-style: normal;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+@media screen and (min-width: 600px) {
+    .mobile {
+        display: none !important;
+    }
+}
+
 @media screen and (max-width: 600px) {
-    a:not(.nohover) {
+    h1, .h1 {
+        font-size: 48px;
+        letter-spacing: 1px;
+    }
+    .desktop {
+        display: none !important;
+    }
+    a:not(.nounderline) {
         text-decoration: underline;
     }
 }

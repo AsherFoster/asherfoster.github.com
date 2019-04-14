@@ -1,9 +1,8 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import Router from 'next/router';
-import {GA_TRACKING_ID, pageview} from '../lib/gtag';
+import {GA_TRACKING_ID} from '../lib/gtag';
 
-Router.events.on('routeChangeComplete', (url: string) => pageview(url));
+
 
 export default class MyDocument extends Document {
   public render() {
@@ -26,7 +25,6 @@ export default class MyDocument extends Document {
             }}
           />
           <meta name='viewport' content='width=device-width, initial-scale=1'/>
-          <title>Asher Foster</title>
         </Head>
         <body>
           <Main/>

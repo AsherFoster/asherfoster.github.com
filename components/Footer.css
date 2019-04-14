@@ -1,36 +1,15 @@
-footer {
-    color: #FFF;
-    font-family: 'Roboto Mono', 'Courier Sans', monospace;
-}
-#footer-stripe {
-    width: 0;
-    height: 0;
-    border-style: solid;
-    border-width: 0 0 200px 100vw;
-    border-color: transparent transparent #058CDC transparent;
-    z-index: -2;
-}
 .footer-text {
+    padding: 14px 0;
     display: flex;
-    background: #058CDC;
 }
 .footer-text * {
-    margin: 18px;
+    color: inherit;
+    margin: 6px 18px;
 }
 
 @media screen and (max-width: 600px) {
-    #footer-stripe {
-        display: none;
-    }
-
     .footer-text {
-        padding: 30px 0;
-        z-index: -2;
-        flex-direction: column;
+        flex-direction: column-reverse;
         text-align: center;
-    }
-
-    .footer-text * {
-        margin: 10px;
     }
 }
