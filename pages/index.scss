@@ -163,6 +163,7 @@
 }
 .backEndImageWrapper {
   width: 550px;
+  max-width: 80vh * (770 / 725); // Make the width proportional to the img height. Adjust if the image changes
 }
 .backEndImage {
   position: absolute;
@@ -177,6 +178,7 @@
 .cards {
   display: flex;
   justify-content: space-around;
+  align-items: center;
 }
 .cardsItem {
   text-align: center;
@@ -205,6 +207,12 @@
   font-size: 20px;
   display: block;
   margin: 30px 0 10px;
+}
+
+@media screen and (max-width: 1050px) {
+  .cardsItem {
+    margin: 10px;
+  }
 }
 
 @media screen and (max-width: 600px) {

@@ -1,8 +1,7 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import {GA_TRACKING_ID} from '../lib/gtag';
-
-
+import '../lib/sentry';
 
 export default class MyDocument extends Document {
   public render() {
