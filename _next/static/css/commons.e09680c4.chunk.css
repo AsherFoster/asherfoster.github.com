@@ -1,0 +1,109 @@
+.nav___2sc4U.mainHeader___1HfwB {
+  display: flex; }
+
+.nav___2sc4U.absolute___1WOZA {
+  z-index: 1;
+  width: 100vw;
+  position: absolute; }
+
+.nav___2sc4U a {
+  color: #FFF;
+  text-decoration: none;
+  display: inline-block;
+  padding: 10px 12px;
+  margin: 8px 6px; }
+
+.nav___2sc4U a:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 5px; }
+
+.headerToggle___2nB-E {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  right: 10px;
+  top: 10px;
+  z-index: 90;
+  background: #222;
+  border-radius: 20px;
+  box-shadow: 1px 2px 10px -1px rgba(0, 0, 0, 0.4); }
+
+.headerToggle___2nB-E.fixed___9ma12 {
+  position: fixed; }
+
+.headerToggle___2nB-E img, .headerClose___1G7j8 img {
+  width: 24px; }
+
+.mobileHeader___EfOKP {
+  position: fixed;
+  top: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.9) 400px, rgba(0, 0, 0, 0.7) 100%);
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  z-index: 90; }
+
+.headerClose___1G7j8 {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 91; }
+
+.mobileHeader___EfOKP ul {
+  padding-left: 0;
+  margin-top: 60px; }
+
+.mobileHeader___EfOKP li {
+  color: #FFF;
+  list-style: none;
+  font-size: 30px;
+  margin: 20px 0; }
+
+.mobileHeader___EfOKP a {
+  text-decoration: none; }
+
+.footerText___2B95k {
+  padding: 14px 0;
+  display: flex; }
+  .footerText___2B95k * {
+    color: inherit;
+    margin: 6px 18px; }
+  .footerText___2B95k a {
+    font-style: italic; }
+
+.footerDark___3mlaj {
+  background: #222;
+  color: #FFF; }
+  .footerDark___3mlaj a {
+    color: #70D9FF; }
+
+@media screen and (max-width: 600px) {
+  .footerText___2B95k {
+    flex-direction: column-reverse;
+    text-align: center; } }
+
+.topSection___1Q1TV {
+  height: 350px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  background: #222;
+  color: #FFF; }
+
+.topSection___1Q1TV h1 {
+  margin: 0; }
+
+.topSection___1Q1TV h2 {
+  font-weight: normal; }
+
