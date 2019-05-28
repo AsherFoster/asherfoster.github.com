@@ -1,0 +1,75 @@
+@import url('https://fonts.googleapis.com/css?family=Nunito+Sans:400,400i,700i|Playfair+Display:700');
+@import '_vars';
+
+:global {
+    /* ASSUME IN LIGHT THEME! */
+    * {
+        position: relative;
+    }
+
+    html, body {
+        margin: 0;
+        font-family: $sans-serif;
+        overflow-x: hidden;
+    }
+
+    body.lock-scroll > div {
+        overflow: hidden;
+    }
+
+    .flex {
+        flex: 1;
+    }
+
+    /* ******************** */
+    /* ******************** */
+    /*      Typography      */
+    /* ******************** */
+    /* ******************** */
+    @mixin fontDisplay {
+        font-family: $display;
+        font-weight: bold;
+    }
+    h1 {
+        @include fontDisplay();
+    }
+    h1 {
+        letter-spacing: 2px;
+        font-size: 56px;
+    }
+    a {
+        color: inherit;
+    }
+    a:hover:not(.nohover) {
+        text-decoration: none;
+    }
+
+    a.arrow {
+        text-decoration: underline;
+    }
+    a.arrow:after {
+        content: '▸';
+        font-style: normal;
+        display: inline-block;
+        margin-left: 5px;
+    }
+
+    @media screen and (min-width: 600px) {
+        .mobile {
+            display: none !important;
+        }
+    }
+
+    @media screen and (max-width: 600px) {
+        h1 {
+            font-size: 48px;
+            letter-spacing: 1px;
+        }
+        .desktop {
+            display: none !important;
+        }
+        a:not(.nounderline) {
+            text-decoration: underline;
+        }
+    }
+}
