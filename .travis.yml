@@ -13,4 +13,6 @@ deploy:
   keep_history: true
   target_branch: master
   local_dir: out
+  on:
+    branch: source
 
