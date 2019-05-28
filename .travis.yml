@@ -6,6 +6,8 @@ branches:
 
 script: npm run test && npm run build && npm run export
 
+before_deploy: sh patch_out.sh
+
 deploy:
   provider: pages
   skip_cleanup: true
