@@ -1,6 +1,5 @@
 import React from 'react';
 import PageLayout from '../../components/PageLayout';
-import Wip from '../../components/Wip';
 import PageContent from '../../components/PageContent';
 
 const Contact = () => (
