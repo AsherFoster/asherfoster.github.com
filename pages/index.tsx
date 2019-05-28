@@ -94,7 +94,7 @@ const Index = () => (
         <img src='/static/layers-blue.svg' />
         <h2>Full Stack</h2>
         <p>Often my projects tie back end and front end together to make some crazy tool.</p>
-        <Link href='//github.com/asherfoster/wtfsiw'>
+        <Link href='//whatthefuckshouldiwatch.asherfoster.com'>
           <a className='arrow'>WTFSIW?</a>
         </Link>
       </div>

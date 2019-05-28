@@ -37,7 +37,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     name: 'WTFSIW',
     description: 'An ICT assessment gone crazy. Need a quick movie? Try it out.',
-    img: '/static/unicorns.png',
+    img: '/static/wtfsiw.png',
     techs: ['Node.js', 'Docker', 'Typescript', 'SQLite'],
     links: [
       ['Web', '//whatthefuckshouldiwatch.asherfoster.com'],
@@ -47,7 +47,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     name: 'Admin Center',
     description: 'A control panel to interface with my APIs in a pretty way',
-    img: '/static/frontend.png',
+    img: '/static/frontend-blur.png',
     techs: ['Typescript', 'Vue'],
     links: [['Github', '//github.com/asherfoster/apis']],
   },
