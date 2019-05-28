@@ -57,7 +57,7 @@ class Header extends React.Component {
             className={styles.headerClose + ' mobile'}
             onClick={() => this.toggleNav()}
           >
-            <img src='/static/close-white.svg' />
+            <img src='/static/close-white.png' />
           </button>
           <ul>
             <li>
