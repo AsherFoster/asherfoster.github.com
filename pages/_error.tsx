@@ -1,26 +1,31 @@
 import React from 'react';
+import {NextContext} from 'next';
 import Link from 'next/link';
 import BasePage from '../components/BasePage';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import styles from './_error.css';
+import styles from './_error.scss';
 
-class Error extends React.Component {
-  public static getInitialProps({ res, err }) {
-    const statusCode = res ? res.statusCode : err ? err.statusCode : null;
+export type ErrorProps = {
+  statusCode?: number;
+};
+
+class ErrorPage extends React.Component {
+  public props: ErrorProps = {};
+  public static getInitialProps({ res, err }: NextContext) {
+    const statusCode = res ? res.statusCode : err ? (err as any).statusCode : null;
     return { statusCode };
   }
-
   public render() {
     return (
       <BasePage>
         <Header/>
-        <div className='wrapper theme-dark'>
-          <div className='text'>
-            <p className='sad-emoji font-display'>:(</p>
+        <div className={styles.wrapper}>
+          <div>
+            <p className={styles.sadEmoji}>:(</p>
             <h1>Error {this.props.statusCode ? this.props.statusCode : 'on client'}</h1>
             <p className='subtitle'>Something went wrong displaying this page</p>
-            <p className='links'>
+            <p className={styles.links}>
               <a href='#' onClick={() => history.back()}>Back</a>
               <Link href='/'>
                 <a>Home</a>
@@ -29,10 +34,9 @@ class Error extends React.Component {
           </div>
         </div>
         <Footer dark />
-        <style jsx>{styles}</style>
       </BasePage>
     );
   }
 }
 
-export default Error;
+export default ErrorPage;

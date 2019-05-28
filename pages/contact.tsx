@@ -1,35 +1,18 @@
 import React from 'react';
 import PageLayout from '../components/PageLayout';
+import styles from './contact.scss';
 
 const Contact = () => (
   <PageLayout title='Contact me'>
-    <div className='wrapper'>
+    <div className={styles.wrapper}>
       <p>Contact forms are difficult, so DM me on something!</p>
-      <a href='//twitter.com/asherfoster' className='subtle contact-button'>
+      <a href='//twitter.com/asherfoster' className={styles.contactButton}>
         Twitter
       </a>
-      <a href='//keybase.io/asherfoster' className='subtle contact-button'>
+      <a href='//keybase.io/asherfoster' className={styles.contactButton}>
         Keybase
       </a>
     </div>
-    <style jsx>{`
-    .wrapper {
-      text-align: center;
-      margin: 20px 0;
-    }
-    .contact-button {
-      display: block;
-      border-radius: 6px;
-      margin: 5px auto;
-      padding: 6px;
-      text-align: center;
-      background: #d6d6d6;
-      max-width: 200px;
-    }
-    .contact-button:hover {
-      background: #c4c4c4;
-    }
-    `}</style>
   </PageLayout>
 );
 

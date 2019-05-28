@@ -1,18 +1,27 @@
-nav.main-header {
+@import '../lib/_vars';
+
+.nav.mainHeader {
     display: flex;
 }
-nav.absolute {
+.nav.absolute {
     z-index: 1;
     width: 100vw;
     position: absolute;
 }
-nav a {
-    color: var(--text-dark);
+.nav a {
+    color: $text-dark;
+    text-decoration: none;
     display: inline-block;
-    padding: 18px;
+    padding: 10px 12px;
+    margin: 8px 6px;
+}
+.nav a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
 }
 
-.header-toggle {
+.headerToggle {
+    @include buttonReset();
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,18 +30,18 @@ nav a {
     right: 10px;
     top: 10px;
     z-index: 90;
-    background: var(--bg-dark);
+    background: $bg-dark;
     border-radius: 20px;
     box-shadow: 1px 2px 10px -1px rgba(0,0,0,0.4);
 }
-.header-toggle.fixed {
+.headerToggle.fixed {
     position: fixed;
 }
-.header-toggle img, .header-close img {
+.headerToggle img, .headerClose img {
     width: 24px;
 }
 
-.mobile-header {
+.mobileHeader {
     position: fixed;
     top: 0;
     background: linear-gradient(180deg, rgba(0,0,0,0.90) 400px, rgba(0,0,0,0.7) 100%);
@@ -42,23 +51,25 @@ nav a {
     z-index: 90;
 }
 
-.header-close {
+.headerClose {
+    @include buttonReset();
     position: absolute;
     top: 18px;
     right: 18px;
     z-index: 91;
 }
-.mobile-header ul {
+.mobileHeader ul {
     padding-left: 0;
     margin-top: 60px;
 }
-.mobile-header li {
+.mobileHeader li {
+    color: $text-dark;
     list-style: none;
     font-size: 30px;
     margin: 20px 0;
 }
 
-.mobile-header a {
+.mobileHeader a {
     text-decoration: none;
 }
 

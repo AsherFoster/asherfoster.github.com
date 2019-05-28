@@ -1,0 +1,16 @@
+$bg-dark: #222;
+$bg-light: #FFF;
+$text-dark: #FFF;
+$text-light: #000;
+$link-dark: #70D9FF;
+$link-light: #25A7FB;
+
+$display: 'Playfair Display', 'Georgia', serif;
+$sans-serif: 'Nunito Sans', 'Arial', sans-serif;
+
+@mixin buttonReset {
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 0;
+}

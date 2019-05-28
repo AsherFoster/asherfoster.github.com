@@ -1,0 +1,251 @@
+@import '../lib/_vars';
+
+.sectionArrow {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 60px;
+  z-index: 1;
+}
+
+@mixin triangle() {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  @content
+}
+
+.topSection {
+  display: flex;
+  min-height: 100vh;
+}
+.topSectionMobileSlash {
+  margin-top: 200px;
+  @include triangle {
+    border-width: 50px 0 0 100vw;
+    border-color: transparent transparent transparent $bg-dark;
+  }
+}
+.topSectionWrapper {
+  z-index: 1; // To appear on top of triangle shadow
+  background: $bg-dark;
+  min-height: 100vh;
+  max-width: calc(100vw - 400px);
+  width: calc(50vw + 30px);
+  display: flex;
+  align-items: center;
+}
+.topSectionText {
+  margin-left: 50px;
+  * {
+    color: $text-dark;
+  }
+  h1 {
+    font-size: 70px;
+    margin: 0;
+  }
+  p {
+    margin: 0 0 1.5em;
+    font-size: 20px;
+  }
+  a {
+    font-weight: bold;
+    color: $link-dark;
+    font-size: 20px;
+  }
+}
+.topSectionBackdrop {
+  position: absolute;
+  top: 0;
+  right: 0;
+  min-height: 100vh;
+}
+
+.topSectionSlash {
+  @include triangle {
+    border-width: 100vh 150px 0 0;
+    border-color: $bg-dark transparent transparent transparent;
+  }
+  filter: drop-shadow(2px 2px 10px rgba(0,0,0, 0.5));
+}
+
+
+// ---- FRONT END -----
+
+
+.frontEndSection {
+  min-height: 80vh;
+  display: flex;
+  justify-content: end;
+}
+.frontEndSectionBackdrop {
+  position: absolute;
+  object-fit: cover;
+  left: 0;
+  width: calc(50vw + 30px);
+  height: 80vh;
+}
+.frontEndWrapper {
+  display: flex;
+  width: calc(50vw - 30px);
+  min-width: 600px;
+  flex-shrink: 0; // Fixes issue with flex automatically shrinking to min
+  z-index: 1;
+  background: $bg-light;
+  align-items: center;
+  justify-content: end;
+}
+.frontEndSlash {
+  margin-left: auto;
+  @include triangle {
+    border-width: 0 0 80vh 150px;
+    border-color: transparent transparent $bg-light transparent;
+  }
+  filter: drop-shadow(2px 2px 10px rgba(0,0,0, 0.5));
+}
+.frontEndText {
+  text-align: right;
+  margin-right: 50px;
+  h2 {
+    margin-top: 0;
+    font-family: $display;
+    font-size: 60px;
+  }
+  p {
+    font-size: 20px;
+    width: 500px;
+  }
+  a {
+    color: $link-light;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 40px;
+  }
+}
+
+// ----- BACK END -----
+
+.backEndSection {
+  background: $bg-dark;
+  display: flex;
+  min-height: 80vh;
+  color: $text-dark
+}
+.backEndSlash {
+  @include triangle {
+    border-width: 50px 0 0 100vw;
+    border-color: transparent transparent transparent $bg-dark;
+  }
+}
+.backEndWrapper {
+  display: flex;
+  align-items: center;
+}
+.backEndText {
+  margin-left: 50px;
+  h2 {
+    margin-top: 0;
+    font-family: $display;
+    font-size: 60px;
+  }
+  p {
+    margin-top: 0;
+    font-size: 20px;
+    width: 550px;
+  }
+  a {
+    font-weight: bold;
+    color: $link-dark;
+    font-size: 20px;
+  }
+}
+.backEndImageWrapper {
+  width: 550px;
+}
+.backEndImage {
+  position: absolute;
+  left: 0;
+  max-height: 80vh;
+}
+
+
+// ----- CARDS -----
+
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+.cardsItem {
+  text-align: center;
+  margin: 60px;
+  max-width: 300px;
+  box-shadow: 1px 2px 10px -1px rgba(0,0,0,0.4);
+  padding: 20px;
+  border-radius: 10px;
+  flex: 1;
+}
+.cardsItem h2 {
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0.5em;
+}
+.cardsItem img {
+  opacity: 0.8;
+  width: 100px;
+}
+.cardsItem p {
+  height: 70px;
+}
+.cardsItem a {
+  font-style: italic;
+  color: $link-light;
+  font-size: 20px;
+  display: block;
+  margin: 30px 0 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .sectionArrow {
+    display: none;
+  }
+  .topSection {
+    flex-direction: column;
+    min-height: 40vh;
+  }
+  .topSectionWrapper {
+    width: 100vw;
+    min-height: 40vh;
+    max-width: unset;
+  }
+  .topSectionText {
+    text-align: center;
+    margin: 0;
+    width: 100vw;
+    h1 {
+      font-size: 50px;
+    }
+  }
+  .topSectionBackdrop {
+    width: 100vw;
+    min-height: unset;
+  }
+  .backEndText, .frontEndText {
+    margin: 15px;
+    max-width: calc(100vw - 30px);
+    p {
+      max-width: calc(100vw - 30px);
+    }
+  }
+  .backEndImage {
+    display: none;
+  }
+  .links a{
+    display: block;
+  }
+  .cards {
+    flex-direction: column;
+  }
+}

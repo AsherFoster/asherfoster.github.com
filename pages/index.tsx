@@ -1,46 +1,46 @@
 import React from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
-import Footer from '../components/Footer';
+import BasePage from '../components/BasePage';
 import Header from '../components/Header';
-import styles from './index.css';
-import rootStyles from '../components/root.css';
+import Footer from '../components/Footer';
+import styles from './index.scss';
 
 const Index = () => (
-  <React.Fragment>
+  <BasePage>
     <Head>
       <title>Asher Foster</title>
     </Head>
     <Header hideName={true} />
-    <section className='section section-slashed theme-dark' id='top-section'>
-      <img src='/static/frontend-blur.png' className='section-backdrop'/>
-      <div className='section-slash mobile' />
-      <div className='section-text-wrapper theme-dark'>
-        <div className='section-text'>
+    <section className={styles.topSection}>
+      <img src='/static/frontend-blur.png' className={styles.topSectionBackdrop} />
+      <div className={styles.topSectionMobileSlash + ' mobile'} />
+      <div className={styles.topSectionWrapper}>
+        <div className={styles.topSectionText}>
           <h1>Asher Foster</h1>
-          <p>Full stack web and cloud developer</p>
+          <p>I like to build full stack web apps</p>
           <Link href='/portfolio'>
             <a className='arrow'>My Portfolio</a>
           </Link>
         </div>
       </div>
-      <div className='section-slash desktop' />
+      <div className={styles.topSectionSlash + ' desktop'} />
       <Link href='#'>
-        <a className='section-arrow'>
-          <img src='/static/arrow-down-white.svg' className='section-arrow' />
+        <a className={styles.sectionArrow}>
+          <img src='/static/arrow-down-white.svg' className={styles.sectionArrow} />
         </a>
       </Link>
     </section>
-    <section className='section section-slashed theme-light' id='front-end-section'>
-      <img src='/static/developster-blur.png' className='section-backdrop'/>
-      <div className='section-slash desktop' />
-      <div className='section-text-wrapper theme-light'>
-        <div className='section-text'>
-          <h1>Front End</h1>
+    <section className={styles.frontEndSection}>
+      <img src='/static/developster-blur.png' className={styles.frontEndSectionBackdrop} />
+      <div className={styles.frontEndSlash} />
+      <div className={styles.frontEndWrapper}>
+        <div className={styles.frontEndText}>
+          <h2>Front End</h2>
           <p>I've been working with code for about 5 years now, building my skills up to where they are now.
             I'm well versed in making custom front end products, using various web technologies
-            including <b>Angular</b>, <b>React</b>, <b>Vue</b> and <b>Typescript</b></p>
-          <div className='section-links'>
+            including Angular, React, Vue and Typescript</p>
+          <div className={styles.links}>
             <a href='//medium.com/developster-archive' className='arrow'>Developster Blog</a>
             <Link href='/experiments'>
               <a className='arrow'>Experiments</a>
@@ -49,66 +49,66 @@ const Index = () => (
         </div>
       </div>
       <Link href='#'>
-        <a className='section-arrow'>
-          <img src='/static/arrow-down-black.svg' className='section-arrow' />
+        <a className={styles.sectionArrow}>
+          <img src='/static/arrow-down-black.svg' className={styles.sectionArrow} />
         </a>
       </Link>
-      <div className='section-slash mobile' />
     </section>
-    <section className='section theme-dark' id='back-end-section'>
-      <div className='section-slash mobile' />
-      <div className='section-text-wrapper theme-dark'>
-        <div className='section-text'>
-          <h1>Back End</h1>
+    <div className={styles.backEndSlash + ' mobile'} />
+    <section className={styles.backEndSection}>
+      <div className={styles.backEndWrapper}>
+        <div className={styles.backEndText}>
+          <h2>Back End</h2>
           <p>I've built everything from simple scraping scripts through to fully fledged <b>REST APIs</b>. Starting off with
             PHP and quickly moving into <b>Node.js</b>, I've gained a lot of experience with designing secure and performant systems.</p>
-          <div className='section-links'>
+          <div className={styles.links}>
             <Link href='/portfolio'>
               <a className='arrow'>APIs</a>
             </Link>
-            <Link href='/experiments'>
-              <a className='arrow'></a>
-            </Link>
+            {/*<Link href='/experiments'>*/}
+            {/*  <a className='arrow'></a>*/}
+            {/*</Link>*/}
           </div>
         </div>
       </div>
-      <img src='/static/azure.png' className='section-image'/>
+      <div className='flex' />
+      <div className={styles.backEndImageWrapper}>
+        <img src='/static/azure.png' className={styles.backEndImage} />
+      </div>
       <Link href='#'>
-        <a className='section-arrow'>
-          <img src='/static/arrow-down-white.svg' className='section-arrow' />
+        <a className={styles.sectionArrow}>
+          <img src='/static/arrow-down-white.svg' className={styles.sectionArrow} />
         </a>
       </Link>
     </section>
-    <section className='cards theme-light' id='cards-section'>
-      <div className='cards-item'>
+    <section className={styles.cards}>
+      <div className={styles.cardsItem}>
         <img src='/static/cloud-blue.svg' />
-        <h2 className='font-display'>Cloud</h2>
+        <h2>Cloud</h2>
         <p>I've been using Azure for about 3 years, creating a variety of services.</p>
-        <Link href='/blog/azure'>
-          <a className='arrow'>Azure Work</a>
+        <Link href='//github.com/asherfoster/letsencryptfunctions'>
+          <a className='arrow'>Azure LetsEncrypt</a>
         </Link>
       </div>
-      <div className='cards-item'>
+      <div className={styles.cardsItem}>
         <img src='/static/layers-blue.svg' />
-        <h2 className='font-display'>Full Stack</h2>
+        <h2>Full Stack</h2>
         <p>Often my projects tie back end and front end together to make some crazy tool.</p>
-        <Link href='/blog/azure'>
-          <a className='arrow'>Server Status</a>
+        <Link href='//github.com/asherfoster/wtfsiw'>
+          <a className='arrow'>WTFSIW?</a>
         </Link>
       </div>
-      <div className='cards-item'>
+      <div className={styles.cardsItem}>
         <img src='/static/edit-blue.svg' />
-        <h2 className='font-display'>Design</h2>
-        <p>I've designed and built countless apps, and aesthetics are always important to me.</p>
-        <Link href='/blog/azure'>
-          <a className='arrow'>Portfolio Development</a>
+        <h2>Design</h2>
+        <p>I've designed and built countless apps, and I don't compromise on aesthetics</p>
+        <Link href='/constellation'>
+          <a className='arrow'>Constellation Cold Brew</a>
         </Link>
       </div>
     </section>
     <Footer />
-    <style jsx>{styles}</style>
-    <style jsx>{rootStyles}</style>
-  </React.Fragment>
+  </BasePage>
 );
 
 export default Index;

@@ -1,19 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
 import Router from 'next/router';
-import rootStyles from './root.css';
 import {pageview} from '../lib/gtag';
+import '../lib/root.scss';
 
 Router.events.on('routeChangeComplete', (url: string) => pageview(url));
 
-const PageLayout = (props) => (
+const BasePage = (props: {children: any}) => (
   <React.Fragment>
     <Head>
       <title>Asher Foster</title>
     </Head>
     {props.children}
-    <style jsx>{rootStyles}</style>
   </React.Fragment>
 );
 
-export default PageLayout;
+export default BasePage;

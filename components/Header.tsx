@@ -1,16 +1,21 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './Header.css';
+import styles from './Header.scss';
 
-export interface HeaderProps {
-  block: boolean; // Defaults to absolute
-  hideName: boolean; // Hide the name on the left
-  fixedToggle: boolean; // Whether the toggle on mobile should be fixed
-}
+export type HeaderProps = {
+  block?: boolean; // Defaults to absolute
+  hideName?: boolean; // Hide the name on the left
+  fixedToggle?: boolean; // Whether the toggle on mobile should be fixed
+};
+
+type HeaderState = {
+  mobileNavOpen: boolean
+};
 
 class Header extends React.Component {
   // @ts-ignore
   public props: HeaderProps;
+  public state: HeaderState;
   constructor(props: HeaderProps) {
     super(props);
     this.state = {
@@ -21,7 +26,7 @@ class Header extends React.Component {
   public render() {
     return (
       <React.Fragment>
-        <nav className={'main-header' + (this.props.block ? '' : ' absolute')}>
+        <nav className={styles.mainHeader + ' ' + styles.nav + (this.props.block ? '' : ' ' + styles.absolute)}>
           {
             this.props.hideName ? null : (
               <Link href='/'>
@@ -32,24 +37,24 @@ class Header extends React.Component {
           <span className='flex'/>
           <div className='desktop'>
             <Link href='/about'>
-              <a className='header-link subtle'>About</a>
+              <a>About</a>
             </Link>
             <Link href='/portfolio'>
-              <a className='header-link subtle'>Portfolio</a>
+              <a>Portfolio</a>
             </Link>
             <Link href='/contact'>
-              <a className='header-link subtle'>Contact</a>
+              <a>Contact</a>
             </Link>
           </div>
         </nav>
         <button
-          className={'mobile header-toggle button-reset' + (this.props.fixedToggle === false ? '' : ' fixed')}
+          className={styles.headerToggle + ' mobile ' + (this.props.fixedToggle === false ? '' : styles.fixed)}
           onClick={() => this.toggleNav()}>
           <img src='/static/menu-white.png' />
         </button>
-        <nav className='mobile-header mobile' style={{display: this.state.mobileNavOpen ? '' : 'none'}}>
+        <nav className={styles.mobileHeader + ' mobile'} style={{display: this.state.mobileNavOpen ? '' : 'none'}}>
           <button
-            className='mobile header-close button-reset'
+            className={styles.headerClose + ' mobile'}
             onClick={() => this.toggleNav()}
           >
             <img src='/static/close-white.svg' />
@@ -58,6 +63,11 @@ class Header extends React.Component {
             <li>
               <Link href='/'>
                 <a>Home</a>
+              </Link>
+            </li>
+            <li>
+              <Link href='/about'>
+                <a>About</a>
               </Link>
             </li>
             <li>
@@ -77,7 +87,6 @@ class Header extends React.Component {
             </li>
           </ul>
         </nav>
-        <style jsx>{styles}</style>
       </React.Fragment>
     );
   }

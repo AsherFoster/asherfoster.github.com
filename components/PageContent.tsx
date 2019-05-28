@@ -1,16 +1,13 @@
-const PageContent = (props) => (
-  <React.Fragment>
-    <div className='content'>
-      {props.children}
-    </div>
-    <style jsx>{`
-.content {
-  max-width: 900px;
-  padding: 15px;
-  margin: auto;
-}
-    `}</style>
-  </React.Fragment>
+import React from 'react';
+
+const PageContent = (props: React.ComponentProps<any>) => (
+  <div style={{
+    maxWidth: '900px',
+    padding: '15px',
+    margin: 'auto'
+  }}>
+    {props.children}
+  </div>
 );
 
 export default PageContent;

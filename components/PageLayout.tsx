@@ -1,26 +1,26 @@
 import React from 'react';
 import Head from 'next/head';
-import BasePage from './BasePage';
 import Header from './Header';
 import Footer from './Footer';
-import styles from './PageLayout.css';
+import PageHead from './PageHead';
 
-const PageLayout = (props) => (
-  <BasePage>
+type PageLayoutProps = {
+  title: string;
+  htmlTitle?: string;
+  subtitle?: string;
+  children?: any;
+};
+
+const PageLayout = (props: PageLayoutProps) => (
+  <React.Fragment>
     <Head>
-      <title>Asher Foster{props.title ? ` - ${props.title}` : ''}</title>
+      <title>Asher Foster - {props.htmlTitle || props.title}</title>
     </Head>
-    <Header/>
-    <div id='top-section' className='theme-dark'>
-      <div id='top-section-text'>
-        <h1>{props.title}</h1>
-        {props.subtitle && <h2>{props.subtitle}</h2>}
-      </div>
-    </div>
+    <Header />
+    <PageHead title={props.title} subtitle={props.subtitle} />
     {props.children}
-    <Footer/>
-    <style jsx>{styles}</style>
-  </BasePage>
+    <Footer />
+  </React.Fragment>
 );
 
 export default PageLayout;

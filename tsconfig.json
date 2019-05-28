@@ -10,10 +10,13 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "preserveConstEnums": true,
-    "removeComments": false,
+    "removeComments": true,
     "skipLibCheck": true,
     "sourceMap": true,
     "strict": true,
     "target": "esnext"
-  }
+  },
+  "exclude": [
+    "node_modules"
+  ]
 }

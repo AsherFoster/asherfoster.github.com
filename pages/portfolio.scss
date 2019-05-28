@@ -5,12 +5,12 @@
 .selection > *{
   margin: 6px;
 }
-.portfolio-grid {
+.portfolioGrid {
   display: flex;
   flex-wrap: wrap;
 }
 
-.portfolio-item {
+.portfolioItem {
   flex: 1;
   display: flex;
   min-width: 400px;
@@ -21,16 +21,16 @@
   box-shadow: 1px 3px 5px -1px rgba(0,0,0,0.4);
 }
 
-.item-text {
+.itemText {
   padding: 20px;
   flex: 1;
   background: #FFF;
 }
-.item-text p {
+.itemText p {
   margin: 0.4em 0;
 }
 
-.portfolio-item h3 {
+.portfolioItem h3 {
   margin: 0;
   font-size: 30px;
 }
@@ -39,7 +39,7 @@
   margin: 1em 0;
 }
 
-.item-shunt {
+.itemShunt {
   border-style: solid;
   border-width: 250px 100px 0 0;
   border-color: #FFF transparent transparent transparent;

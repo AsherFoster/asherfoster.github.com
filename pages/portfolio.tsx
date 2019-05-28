@@ -2,9 +2,21 @@ import React, {ChangeEvent} from 'react';
 import PageLayout from '../components/PageLayout';
 import PageContent from '../components/PageContent';
 import TextBadge from '../components/TextBadge';
-import styles from './portfolio.css';
+import styles from './portfolio.scss';
 
-const portfolioItems = [
+export type PortfolioItem = {
+  name: string,
+  description: string,
+  img: string,
+  techs: string[]
+  links: string[][]
+};
+export type PortfolioState = {
+  filter: string,
+  items: PortfolioItem[]
+}
+
+const portfolioItems: PortfolioItem[] = [
   {
     name: 'APIs',
     description: 'Back end systems for authentication and other things',
@@ -20,6 +32,16 @@ const portfolioItems = [
     links: [
       ['Web', '//asherfoster.com/experiments'],
       ['Github', '//github.com/asherfoster/experiments']
+    ]
+  },
+  {
+    name: 'WTFSIW',
+    description: 'An ICT assessment gone crazy. Need a quick movie? Try it out.',
+    img: '/static/unicorns.png',
+    techs: ['Node.js', 'Docker', 'Typescript', 'SQLite'],
+    links: [
+      ['Web', '//whatthefuckshouldiwatch.asherfoster.com'],
+      ['Github', '//github.com/asherfoster/wtfsiw']
     ]
   },
   {
@@ -92,25 +114,25 @@ const portfolioItems = [
   }
 ];
 
-let techs = [].concat.apply(['All'], portfolioItems.map(i => i.techs));
+let techs: string[] = [].concat.apply(['All'], portfolioItems.map(i => i.techs) as any); // fuck it
 techs = techs.filter((tech: string, i: number) => techs.indexOf(tech) === i); // Dedupe
 
 class Portfolio extends React.Component {
-  constructor(props) {
+  public state: PortfolioState;
+  constructor(props: {}) {
     super(props);
     this.state = {
       filter: '',
       items: portfolioItems
     };
   }
-  public filterChange = (e: ChangeEvent) => {
+  public filterChange = (e: ChangeEvent<HTMLSelectElement>) => {
     window.location.hash = e.target.value === 'All' ? '' : e.target.value;
     this.setFilter(e.target.value);
   }
-  public hashChange = (e: HashChangeEvent) => {
+  public hashChange = () => {
     this.setFilter(window.location.hash.substr(1));
   }
-
   public setFilter(filter: string) { // TODO
     this.setState({
       filter,
@@ -130,48 +152,49 @@ class Portfolio extends React.Component {
   }
 
   public render() {
-    return (<PageLayout title='My Portfolio'>
+    return (
+      <PageLayout title='My Portfolio' subtitle='Look, I make things!'>
         <PageContent>
           <h2>Some of the work I've done</h2>
           <p>Over the years I've gained quite the collection of random projects. Most of them I don't do much with any
             more, but they've all been critical in me gaining the skills I have. Have a scroll, see what I can do,
-            then most importantly, hire me.</p>
-          <div className='selection'>
+            then most importantly: hire me.</p>
+          <div className={styles.selection}>
             <label htmlFor='tech-sort'>Filter by Tech:</label>
             {' '}
             <select id='tech-sort' value={this.state.filter} onChange={this.filterChange}>
               {techs.map((tech: string) => (<option key={tech} value={tech}>{tech}</option>))}
             </select>
           </div>
-          <div className='portfolio-grid'>
+          <div className={styles.portfolioGrid}>
             {
               this.state.items.length === 0 ? (<p>No projects match that filter <a href='#'>Reset</a></p>) : null
             }
             {
               this.state.items.map(item => (<section
                 key={item.name}
-                className='portfolio-item'
+                className={styles.portfolioItem}
                 style={{backgroundImage: `url(${item.img})`}}>
-                <div className='item-text'>
+                <div className={styles.itemText}>
                   <h3 className='font-display'>{item.name}</h3>
                   <p>{item.description}</p>
-                  <div className='links'>{
+                  <div className={styles.links}>{
                     item.links.map(([display, url], i: number) => (<React.Fragment key={i}>
                       {i !== 0 ? ' - ' : ''}
                       <a href={url}>{display}</a>
                     </React.Fragment>))
                   }</div>
-                  <div className='techs'>{
+                  <div>{
                     item.techs.map((tech: string) => (<TextBadge key={tech} onClick={() => this.setFilter(tech)}>{tech}</TextBadge>))
                   }</div>
                 </div>
-                <div className='item-shunt'/>
+                <div className={styles.itemShunt}/>
               </section>))
             }
           </div>
         </PageContent>
-        <style jsx>{styles}</style>
-      </PageLayout>);
+      </PageLayout>
+    );
   }
 }
 

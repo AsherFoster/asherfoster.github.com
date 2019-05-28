@@ -1,15 +1,19 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './Footer.css';
+import styles from './Footer.scss';
 
-const Footer = (props) => (
+export type FooterProps = {
+  dark?: boolean;
+};
+
+const Footer = (props: FooterProps) => (
   <footer>
-    <div className={'footer-text ' + (props.dark ? 'theme-dark' : 'theme-light')}>
+    <div className={styles.footerText + (props.dark ? ' ' + styles.footerDark : '')}>
       <p>&copy; Asher Foster 2019</p>
       <span className='flex'/>
       <div>
         <Link href='/'>
-          <a>Home</a>
+          <a >Home</a>
         </Link>
         <a href='//github.com/AsherFoster'>Github</a>
         <Link href='/contact'>
@@ -17,7 +21,6 @@ const Footer = (props) => (
         </Link>
       </div>
     </div>
-    <style jsx>{styles}</style>
   </footer>
 );
 

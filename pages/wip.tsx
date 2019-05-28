@@ -1,3 +1,4 @@
+import React from 'react';
 import PageLayout from '../components/PageLayout';
 import WipComp from '../components/Wip';
 
