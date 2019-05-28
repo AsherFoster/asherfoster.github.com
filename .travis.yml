@@ -4,7 +4,7 @@ branches:
   only:
     - source
 
-script: npm run test && npm run export
+script: npm run test && npm run build && npm run export
 
 deploy:
   provider: pages
