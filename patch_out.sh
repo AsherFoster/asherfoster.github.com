@@ -4,4 +4,4 @@
 echo asherfoster.com > out/CNAME
 
 # Disable Jekyll so that _next files are served
-touch .nojekyll
+touch out/.nojekyll
