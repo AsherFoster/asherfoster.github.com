@@ -6,7 +6,7 @@ branches:
 
 script: npm run test && npm run build && npm run export
 
-before_deploy: cp out_patch/* out
+before_deploy: cp out_patch/* out && touch out/.nojekyll
 
 deploy:
   provider: pages
