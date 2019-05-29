@@ -102,7 +102,7 @@ const Index = () => (
         <img src='/static/edit-blue.svg' />
         <h2>Design</h2>
         <p>I've designed and built countless apps, and I don't compromise on aesthetics</p>
-        <Link href='/constellation'>
+        <Link href='/things/constellation'>
           <a className='arrow'>Constellation Cold Brew</a>
         </Link>
       </div>

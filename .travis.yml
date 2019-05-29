@@ -6,7 +6,7 @@ branches:
 
 script: npm run test && npm run build && npm run export
 
-before_deploy: sh patch_out.sh
+before_deploy: cp out_patch/* out
 
 deploy:
   provider: pages
