@@ -146,7 +146,7 @@
   z-index: 1;
   background: #FFF;
   align-items: center;
-  justify-content: end; }
+  justify-content: flex-end; }
 
 .frontEndSlash___2F-SW {
   margin-left: auto;
