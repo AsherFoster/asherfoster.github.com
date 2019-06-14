@@ -59,8 +59,8 @@ const Index = () => (
       <div className={styles.backEndWrapper}>
         <div className={styles.backEndText}>
           <h2>Back End</h2>
-          <p>I've built everything from simple scraping scripts through to fully fledged <b>REST APIs</b>. Starting off with
-            PHP and quickly moving into <b>Node.js</b>, I've gained a lot of experience with designing secure and performant systems.</p>
+          <p>I've built everything from simple scraping scripts through to fully fledged REST APIs. Starting off with
+            PHP and quickly moving into Node.js, I've gained a lot of experience with designing secure and performant systems.</p>
           <div className={styles.links}>
             <Link href='/portfolio'>
               <a className='arrow'>APIs</a>
