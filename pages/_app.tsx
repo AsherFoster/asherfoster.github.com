@@ -1,5 +1,5 @@
 import React from 'react';
-import App, {Container} from 'next/app';
+import App from 'next/app';
 import * as Sentry from '@sentry/browser';
 import '../lib/sentry';
 
@@ -44,12 +44,12 @@ class MyApp extends App {
     const {Component, pageProps} = this.props;
 
     return (
-      <Container>
+      <React.Fragment>
         {this.state.error ?
           <a onClick={() => Sentry.showReportDialog({eventId: this.state.eventId as string})}>Report feedback</a> :
           <Component {...pageProps} />
         }
-      </Container>
+      </React.Fragment>
     );
   }
 }
