@@ -42,7 +42,7 @@ const Index = () => (
             including Angular, React, Vue and Typescript</p>
           <div className={styles.links}>
             <a href='//medium.com/developster-archive' className='arrow'>Developster Blog</a>
-            <Link href='/experiments'>
+            <Link href='/experimentlist'>
               <a className='arrow'>Experiments</a>
             </Link>
           </div>

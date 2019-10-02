@@ -2,13 +2,13 @@ import React from 'react';
 import 'isomorphic-fetch';
 import PageLayout from '../components/PageLayout';
 import PageContent from '../components/PageContent';
-import styles from './experiments.scss';
+import styles from './experimentlist.scss';
 
 interface Props {
   experiments: string[];
 }
 
-const Experiments = ({experiments}: Props) => (
+const Experimentlist = ({experiments}: Props) => (
   <PageLayout title='Experiments'>
     <PageContent>
       <p>I like to make lots of small projects. Here's where I stick lots of the web based ones.
@@ -28,10 +28,10 @@ const Experiments = ({experiments}: Props) => (
   </PageLayout>
 );
 
-Experiments.getInitialProps = async () => {
+Experimentlist.getInitialProps = async () => {
   const res = await fetch('//asherfoster.com/experiments/experiments.json');
   const names = (await res.json()) as string[];
   return {experiments: names || ['Failed to load']};
 };
 
-export default Experiments;
+export default Experimentlist;
