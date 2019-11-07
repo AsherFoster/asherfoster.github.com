@@ -32,6 +32,16 @@ const portfolioItems: PortfolioItem[] = [
     links: [['Github', '//github.com/asherfoster/asherfoster.github.io']],
   },
   {
+    name: 'WTFSIW',
+    description: 'An ICT assessment gone crazy. Need a quick movie? Try it out.',
+    img: '/static/wtfsiw.png',
+    techs: ['Node.js', 'Docker', 'Typescript', 'SQLite'],
+    links: [
+      ['Web', '//whatthefuckshouldiwatch.asherfoster.com'],
+      ['Github', '//github.com/asherfoster/wtfsiw']
+    ]
+  },
+  {
     name: 'Developster',
     description: 'I was part of a team on a journey to kickstart young entrepreneurs',
     img: '/static/developster-blur.png',
@@ -48,16 +58,6 @@ const portfolioItems: PortfolioItem[] = [
     links: [
       ['Web', '//asherfoster.com/experiments'],
       ['Github', '//github.com/asherfoster/experiments']
-    ]
-  },
-  {
-    name: 'WTFSIW',
-    description: 'An ICT assessment gone crazy. Need a quick movie? Try it out.',
-    img: '/static/wtfsiw.png',
-    techs: ['Node.js', 'Docker', 'Typescript', 'SQLite'],
-    links: [
-      ['Web', '//whatthefuckshouldiwatch.asherfoster.com'],
-      ['Github', '//github.com/asherfoster/wtfsiw']
     ]
   },
   {
