@@ -4,29 +4,45 @@ import PageContent from '../components/PageContent';
 import TextBadge from '../components/TextBadge';
 import styles from './portfolio.scss';
 
-export type PortfolioItem = {
-  name: string,
-  description: string,
-  img: string,
-  techs: string[]
-  links: string[][]
-};
-export type PortfolioState = {
-  filter: string,
-  items: PortfolioItem[]
+export interface PortfolioItem {
+  name: string;
+  description: string;
+  img: string;
+  techs: string[];
+  links: [string, string][];
+}
+export interface PortfolioState {
+  filter: string;
+  items: PortfolioItem[];
 }
 
 const portfolioItems: PortfolioItem[] = [
   {
-    name: 'APIs',
-    description: 'Back end systems for authentication and other things',
-    img: '/static/shortener-code.png',
-    techs: ['Node.js', 'Typescript', 'Azure', 'Docker'],
-    links: [['Github', '//github.com/asherfoster/apis']],
+    name: 'Canal',
+    description: 'I got sick of writing features for a bot, and built this to simplify it.',
+    img: '/static/canal.png',
+    techs: ['Node.js', 'Kubernetes', 'Vue', 'PostgreSQL'],
+    links: [['Homepage', '//canal.nz']]
+  },
+  {
+    name: 'This Site',
+    description: 'It\'s this site. I use it to demo that I can, in fact, make a website.',
+    img: '/static/portfolio-site.png',
+    techs: ['Typescript', 'React', 'Next.js'],
+    links: [['Github', '//github.com/asherfoster/asherfoster.github.io']],
+  },
+  {
+    name: 'Developster',
+    description: 'I was part of a team on a journey to kickstart young entrepreneurs',
+    img: '/static/developster-blur.png',
+    techs: ['Angular', 'Azure'],
+    links: [
+      ['Blog', '//medium.com/Developster-Archive'],
+    ]
   },
   {
     name: 'Experiments',
-    description: 'Testing out web technologies and publishing the results',
+    description: 'Testing out web technologies and publishing the results.',
     img: '/static/unicorns.png',
     techs: ['Javascript', 'Travis', 'Luck'],
     links: [
@@ -46,37 +62,28 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     name: 'Admin Center',
-    description: 'A control panel to interface with my APIs in a pretty way',
+    description: 'A control panel to interface with my APIs in a pretty way.',
     img: '/static/frontend-blur.png',
     techs: ['Typescript', 'Vue'],
     links: [['Github', '//github.com/asherfoster/apis']],
   },
   {
-    name: 'This Site',
-    description: 'It\'s this site. I use it to demo the fact I can make sites.',
-    img: '/static/portfolio-site.png',
-    techs: ['Typescript', 'React', 'Next.js'],
-    links: [['Github', '//github.com/asherfoster/asherfoster.github.io']],
-  },
-  {
-    name: 'Developster',
-    description: 'I was part of a team who were trying to kickstart young entrepreneurs',
-    img: '/static/developster-blur.png',
-    techs: ['Angular', 'Azure'],
-    links: [
-      ['Blog', '//medium.com/Developster-Archive'],
-    ]
-  },
-  {
     name: 'Discord Bots',
-    description: 'I\'ve made a handful of discord bots, including my latest generation which dynamically runs scripts',
+    description: 'I\'ve made a handful of discord bots, including my latest generation which dynamically runs scripts.',
     img: '/static/shortener-code.png',
     techs: ['Typescript', 'Discord.js', 'Node.js'],
     links: [['Github', '//github.com/pointlessdev/discordscriptbot']],
   },
   {
+    name: 'APIs',
+    description: 'Back end systems for authentication and other things.',
+    img: '/static/shortener-code.png',
+    techs: ['Node.js', 'Typescript', 'Azure', 'Docker'],
+    links: [['Github', '//github.com/asherfoster/apis']],
+  },
+  {
     name: 'HTTPS Proxy',
-    description: 'Somewhere blocked HTTPS on their network, so I built a proxy to get around it',
+    description: 'Somewhere blocked HTTPS on their network, so I built a proxy to get around it.',
     img: '/static/shortener-code.png',
     techs: ['Node.js'],
     links: [
@@ -85,7 +92,7 @@ const portfolioItems: PortfolioItem[] = [
   },
   {
     name: 'Lineage Checker',
-    description: 'I wanted to learn React, so I built a little app to check if a LineageOS build is available for a device',
+    description: 'I wanted to learn React, so I built a little app to check if a LineageOS build is available for a device.',
     img: '/static/lineage-checker.png',
     techs: ['Javascript', 'React', 'React Native'],
     links: [
@@ -114,8 +121,8 @@ const portfolioItems: PortfolioItem[] = [
   }
 ];
 
-let techs: string[] = [].concat.apply(['All'], portfolioItems.map(i => i.techs) as any); // fuck it
-techs = techs.filter((tech: string, i: number) => techs.indexOf(tech) === i); // Dedupe
+let techs: string[] = [].concat.apply(['All'], portfolioItems.map(i => i.techs) as any[]);
+techs = techs.filter((tech: string, i: number) => techs.indexOf(tech) === i).sort(); // Dedupe and sort
 
 class Portfolio extends React.Component {
   public state: PortfolioState;
@@ -126,20 +133,22 @@ class Portfolio extends React.Component {
       items: portfolioItems
     };
   }
+  // When the user does an action that changes the filter, it should update the URL Hash
+  // When the URL hash updates, the filter will be applied
   public filterChange = (e: ChangeEvent<HTMLSelectElement>) => {
-    window.location.hash = e.target.value === 'All' ? '' : e.target.value;
-    this.setFilter(e.target.value);
+    this.setFilter(e.target.value === 'All' ? '' : e.target.value);
   }
   public hashChange = () => {
-    this.setFilter(window.location.hash.substr(1));
-  }
-  public setFilter(filter: string) { // TODO
+    const filter = window.location.hash.substr(1);
     this.setState({
       filter,
       items: filter === '' ?
         portfolioItems :
         portfolioItems.filter(item => item.techs.includes(filter))
     });
+  }
+  public setFilter(filter: string) { // TODO
+    window.location.hash = filter;
   }
   public componentDidMount(): void {
     if(window.location.hash.length > 1) {
@@ -185,7 +194,7 @@ class Portfolio extends React.Component {
                     </React.Fragment>))
                   }</div>
                   <div>{
-                    item.techs.map((tech: string) => (<TextBadge key={tech} onClick={() => this.setFilter(tech)}>{tech}</TextBadge>))
+                    item.techs.map((tech: string) => (<TextBadge key={tech} href={'#' + tech}>{tech}</TextBadge>))
                   }</div>
                 </div>
                 <div className={styles.itemShunt}/>
