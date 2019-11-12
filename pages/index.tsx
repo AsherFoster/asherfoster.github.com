@@ -32,7 +32,7 @@ const Index = () => (
       </Link>
     </section>
     <section className={styles.frontEndSection}>
-      <img src='/static/developster-blur.png' className={styles.frontEndSectionBackdrop} />
+      <img src='/static/developster-blur.jpg' className={styles.frontEndSectionBackdrop} />
       <div className={styles.frontEndSlash} />
       <div className={styles.frontEndWrapper}>
         <div className={styles.frontEndText}>

@@ -44,7 +44,7 @@ const portfolioItems: PortfolioItem[] = [
   {
     name: 'Developster',
     description: 'I was part of a team on a journey to kickstart young entrepreneurs',
-    img: '/static/developster-blur.png',
+    img: '/static/developster-blur.jpg',
     techs: ['Angular', 'Azure'],
     links: [
       ['Blog', '//medium.com/Developster-Archive'],
