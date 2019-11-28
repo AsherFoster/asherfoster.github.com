@@ -52,15 +52,17 @@ class Header extends React.Component {
         </nav>
         <button
           className={styles.headerToggle + ' mobile ' + (this.props.fixedToggle === false ? '' : styles.fixed)}
-          onClick={() => this.toggleNav()}>
-          <img src='/static/icons/menu-white.png' />
+          onClick={() => this.toggleNav()}
+          aria-label='Open menu'>
+          <img src='/static/icons/menu-white.png' alt='' />
         </button>
         <nav className={styles.mobileHeader + ' mobile'} style={{display: this.state.mobileNavOpen ? '' : 'none'}}>
           <button
             className={styles.headerClose + ' mobile'}
             onClick={() => this.toggleNav()}
+            aria-label='Close menu'
           >
-            <img src='/static/icons/close-white.png' />
+            <img src='/static/icons/close-white.png' alt='' />
           </button>
           <ul>
             <li>
