@@ -1,0 +1,14 @@
+.footerText {
+    padding: 14px 0;
+    display: flex;
+}
+.footerText * {
+    margin: 6px 18px;
+}
+
+@media screen and (max-width: 600px) {
+    .footerText {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+}

@@ -9,6 +9,8 @@ type PageLayoutProps = {
   htmlTitle?: string;
   subtitle?: string;
   children?: any;
+  image?: string;
+  imageLight?: string;
 };
 
 const PageLayout = (props: PageLayoutProps) => (
@@ -17,7 +19,7 @@ const PageLayout = (props: PageLayoutProps) => (
       <title>Asher Foster - {props.htmlTitle || props.title}</title>
     </Head>
     <Header />
-    <PageHead title={props.title} subtitle={props.subtitle} />
+    <PageHead title={props.title} subtitle={props.subtitle} image={props.image} imageLight={props.imageLight} />
     {props.children}
     <Footer />
   </React.Fragment>

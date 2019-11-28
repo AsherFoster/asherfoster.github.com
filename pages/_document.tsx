@@ -6,7 +6,7 @@ import '../lib/sentry';
 export default class MyDocument extends Document {
   public render() {
     return (
-      <html>
+      <html lang='en-NZ'>
         <Head>
           {/* Global Site Tag (gtag.js) - Google Analytics */}
           <script

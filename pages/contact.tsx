@@ -1,18 +1,19 @@
 import React from 'react';
 import PageLayout from '../components/PageLayout';
-import styles from './contact.scss';
+import PageContent from '../components/PageContent';
 
 const Contact = () => (
-  <PageLayout title='Contact me'>
-    <div className={styles.wrapper}>
+  <PageLayout title='say hello' image='/static/img/me.jpg'>
+    <PageContent>
       <p>Contact forms are difficult, so DM me on something!</p>
-      <a href='//twitter.com/asherfoster' className={styles.contactButton}>
+      <a href='//twitter.com/asherfoster'>
         Twitter
       </a>
-      <a href='//keybase.io/asherfoster' className={styles.contactButton}>
+      <br />
+      <a href='//keybase.io/asherfoster'>
         Keybase
       </a>
-    </div>
+    </PageContent>
   </PageLayout>
 );
 

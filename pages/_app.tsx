@@ -2,6 +2,7 @@ import React from 'react';
 import App from 'next/app';
 import * as Sentry from '@sentry/browser';
 import '../lib/sentry';
+import './_app.css';
 
 type AppState = {
   error: Error|null;

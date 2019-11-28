@@ -1,114 +1,154 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Link from 'next/link';
 import Head from 'next/head';
 import BasePage from '../components/BasePage';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import styles from './index.scss';
+import Code from '../components/Code';
+import styles from './index.module.css';
+import BrowserImage from '../components/BrowserImage';
 
-const Index = () => (
-  <BasePage>
-    <Head>
-      <title>Asher Foster</title>
-    </Head>
-    <Header hideName={true} />
-    <section className={styles.topSection}>
-      <img src='/static/frontend-blur.png' className={styles.topSectionBackdrop} />
-      <div className={styles.topSectionMobileSlash + ' mobile'} />
-      <div className={styles.topSectionWrapper}>
-        <div className={styles.topSectionText}>
-          <h1>Asher Foster</h1>
-          <p>I like to build full stack web apps</p>
-          <Link href='/portfolio'>
-            <a className='arrow'>My Portfolio</a>
-          </Link>
-        </div>
-      </div>
-      <div className={styles.topSectionSlash + ' desktop'} />
-      <Link href='#'>
-        <a className={styles.sectionArrow}>
-          <img src='/static/arrow-down-white.svg' className={styles.sectionArrow} />
-        </a>
-      </Link>
-    </section>
-    <section className={styles.frontEndSection}>
-      <img src='/static/developster-blur.jpg' className={styles.frontEndSectionBackdrop} />
-      <div className={styles.frontEndSlash} />
-      <div className={styles.frontEndWrapper}>
-        <div className={styles.frontEndText}>
-          <h2>Front End</h2>
-          <p>I've been working with code for about 5 years now, building my skills up to where they are now.
-            I'm well versed in making custom front end products, using various web technologies
-            including Angular, React, Vue and Typescript</p>
-          <div className={styles.links}>
-            <a href='//medium.com/developster-archive' className='arrow'>Developster Blog</a>
-            <Link href='/experimentlist'>
-              <a className='arrow'>Experiments</a>
-            </Link>
-          </div>
-        </div>
-      </div>
-      <Link href='#'>
-        <a className={styles.sectionArrow}>
-          <img src='/static/arrow-down-black.svg' className={styles.sectionArrow} />
-        </a>
-      </Link>
-    </section>
-    <div className={styles.backEndSlash + ' mobile'} />
-    <section className={styles.backEndSection}>
-      <div className={styles.backEndWrapper}>
-        <div className={styles.backEndText}>
-          <h2>Back End</h2>
-          <p>I've built everything from simple scraping scripts through to fully fledged REST APIs. Starting off with
-            PHP and quickly moving into Node.js, I've gained a lot of experience with designing secure and performant systems.</p>
-          <div className={styles.links}>
+function Index() {
+  const [movie, setMovie] = useState({
+    movie_id: 313369,
+    title: 'La La Land',
+    overview: 'Mia, an aspiring actress, serves lattes to movie stars in between auditions and Sebastian, a jazz musician...'
+  });
+  const [loading, setLoading] = useState(false);
+
+  async function runExample() {
+    setLoading(true);
+    try {
+      const r = await fetch('https://wtfsiw.asherfoster.com/movie');
+      const j = await r.json();
+      setMovie({
+        movie_id: j.movie_id,
+        title: j.title,
+        overview: j.overview.substr(0, 140)
+      });
+    } catch(e) {
+      setMovie(null);
+    }
+    setLoading(false);
+  }
+  return (
+    <BasePage>
+      <Head>
+        <title>Asher Foster</title>
+      </Head>
+      <Header hideName={true}/>
+      <section className={styles.topSection}>
+        <div className={styles.sectionContent}>
+          <div className={styles.topSectionText}>
+            <h1>asher foster</h1>
+            <p className={styles.topSectionSubtitle}>full stack web platform developer</p>
             <Link href='/portfolio'>
-              <a className='arrow'>APIs</a>
+              <a className='button link__arrow'>portfolio</a>
             </Link>
-            {/*<Link href='/experiments'>*/}
-            {/*  <a className='arrow'></a>*/}
-            {/*</Link>*/}
           </div>
         </div>
-      </div>
-      <div className='flex' />
-      <div className={styles.backEndImageWrapper}>
-        <img src='/static/azure.png' className={styles.backEndImage} />
-      </div>
-      <Link href='#'>
-        <a className={styles.sectionArrow}>
-          <img src='/static/arrow-down-white.svg' className={styles.sectionArrow} />
-        </a>
-      </Link>
-    </section>
-    <section className={styles.cards}>
-      <div className={styles.cardsItem}>
-        <img src='/static/cloud-blue.svg' />
-        <h2>Cloud</h2>
-        <p>I've been using Azure for about 3 years, creating a variety of services.</p>
-        <Link href='//github.com/asherfoster/letsencryptfunctions'>
-          <a className='arrow'>Azure LetsEncrypt</a>
+        <img className={styles.topSectionImage} src='/static/img/constellation-bottles.png'/>
+      </section>
+      <section className={styles.frontEndSection}>
+        <div className={styles.sectionContent}>
+          <div className='flex'> {/* Wrap to fix distortion */}
+            <BrowserImage className={styles.frontEndImage}  src='/static/img/canal.jpg' />
+          </div>
+          <div className={styles.frontEndText}>
+            <h1>front end</h1>
+            <p>I've been working with code for about 5 years now, building my skills up to where they are now.
+              I'm well versed in making custom front end products, using various web technologies
+              including Angular, React, Vue and Typescript</p>
+            <div className={styles.linkRow}>
+              <a href='//medium.com/developster-archive'>developster</a>
+              //
+              <Link href='/experimentlist'>
+                <a>experiments</a>
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section className={styles.evolutionSection}>
+        <h1>evolution</h1>
+        <Link href='/things/evolution'>
+          <a>see the change</a>
         </Link>
-      </div>
-      <div className={styles.cardsItem}>
-        <img src='/static/layers-blue.svg' />
-        <h2>Full Stack</h2>
-        <p>Often my projects tie back end and front end together to make some crazy tool.</p>
-        <Link href='//whatthefuckshouldiwatch.asherfoster.com'>
-          <a className='arrow'>WTFSIW?</a>
-        </Link>
-      </div>
-      <div className={styles.cardsItem}>
-        <img src='/static/edit-blue.svg' />
-        <h2>Design</h2>
-        <p>I've designed and built countless apps, and I don't compromise on aesthetics</p>
-        <Link href='/things/constellation'>
-          <a className='arrow'>Constellation Cold Brew</a>
-        </Link>
-      </div>
-    </section>
-    <Footer />
-  </BasePage>
-);
+      </section>
+      <section className={styles.backEndSection}>
+        <div className={styles.sectionContent}>
+          <div className={styles.backEndText}>
+            <h1>back end</h1>
+            <p>I've built everything from simple scraping scripts through to fully fledged REST APIs. Starting off with
+              PHP and quickly moving into Node.js, I've gained a lot of experience with designing secure and performant systems.</p>
+            <div className={styles.linkRow}>
+              <Link href='//canal.nz'>
+                <a>canal</a>
+              </Link>
+              //
+              <Link href='/things/whatthefuckshouldiwatch'>
+                <a>wtfsiw</a>
+              </Link>
+            </div>
+          </div>
+          <div className='flex'/>
+          <div className={styles.backEndExample}>
+            <div className={styles.backEndExampleTitle}>
+              <h2>GET wtfsiw.asherfoster.com/movie</h2>
+              <span className='flex'/>
+              <button onClick={() => loading || runExample()} className='button button__subtle'>{loading ? 'loading' : 'try it'}</button>
+            </div>
+            {
+              movie ? (<Code source={`{
+  "movie_id": ${movie.movie_id},
+  "title": "${movie.title}",
+  "overview": "${movie.overview}",
+  ...
+}`}/>) : (<h2 style={{textAlign: 'center'}}>Yikes, something went wrong :(</h2>)
+            }
+          </div>
+        </div>
+      </section>
+      <section className={styles.cards + ' ' + styles.sectionContent}>
+        <div className={styles.cardsItem} style={{backgroundImage: 'url("/static/cards/bottles.jpg")'}}>
+          <h2>design</h2>
+          <p>learning by iterating</p>
+          <div className={styles.linkRow}>
+            <Link href='/things/constellation'>
+              <a>constellation</a>
+            </Link>
+            //
+            <Link href='/things/evolution'>
+              <a>evolution</a>
+            </Link>
+          </div>
+        </div>
+        <div className={styles.cardsItem} style={{backgroundImage: 'url("/static/cards/canal.jpg")'}}>
+          <h2>cloud</h2>
+          <p>scaling to infinity and beyond</p>
+          <div className={styles.linkRow}>
+            <Link href='//canal.nz'>
+              <a>canal</a>
+            </Link>
+          </div>
+        </div>
+        <div className={styles.cardsItem} style={{backgroundImage: 'url("/static/cards/eyes.jpg")'}}>
+          <h2>random</h2>
+          <p>giving me free time was a bad idea</p>
+          <div className={styles.linkRow}>
+            {/*<Link href='/things/blobchain'>
+              <a>blobchain</a>
+            </Link>
+            //*/}
+            <Link href='/experimentlist'>
+              <a>experiments</a>
+            </Link>
+          </div>
+        </div>
+      </section>
+      <Footer/>
+    </BasePage>
+  );
+}
 
 export default Index;
