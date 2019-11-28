@@ -35,6 +35,8 @@ function Index() {
     <BasePage>
       <Head>
         <title>Asher Foster</title>
+        {/* tslint:disable-next-line:max-line-length */}
+        <meta name='description' content="I'm Asher, and this is a portfolio thing. I'm a full stack web platform developer and this site is a collection of random web experiments"/>
       </Head>
       <Header hideName={true}/>
       <section className={styles.topSection}>
