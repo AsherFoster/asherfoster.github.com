@@ -1,0 +1,186 @@
+.sectionContent {
+  margin: auto;
+  padding: 0 2em;
+  display: flex;
+  width: calc(100vw - 4em);
+  max-width: 1400px;
+  align-items: center;
+}
+h1 {
+  line-height: 64px;
+  font-size: 60px;
+  margin: 0;
+}
+.linkRow a {
+  margin: 0 1em;
+  font-size: 18px;
+}
+.linkRow a:first-child {
+  margin-left: 0;
+}
+.linkRow a:last-child {
+  margin-right: 0;
+}
+
+
+.topSection .sectionContent {
+  display: flex;
+  height: 900px;
+  max-height: 90vh;
+}
+.topSectionText {
+  margin-top: 3em;
+}
+.topSectionSubtitle {
+  margin-top: 0;
+  font-size: 24px;
+  max-width: 350px;
+}
+.topSectionImage {
+  position: absolute;
+  right: -3%;
+  bottom: 13%;
+  height: 90%;
+  max-height: 40vw;
+  transform: rotate(-13deg);
+  z-index: -1;
+}
+
+
+.frontEndSection::before {
+  content: ' ';
+  position: absolute;
+  width: 100%;
+  /* 100% plus trig to expand over triangle at the bottom*/
+  height: calc(100% + (0.11543 * 100vw));
+  background: #141414;
+  transform: skewY(-13deg);
+  top: 0;
+  left: 0;
+}
+.frontEndSection {
+  padding: 6em 0;
+}
+.frontEndImage {
+  width: 60%;
+  max-width: 500px;
+  /*box-shadow: 0 2px 6px 0 rgba(0,0,0,0.5);*/
+}
+.frontEndText {
+  max-width: 500px;
+  text-align: right;
+  font-size: 18px;
+}
+
+.evolutionSection {
+  background: url("/static/projects/evolution.jpg") no-repeat;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: calc(0.23086 * 100vw);
+  min-height: 400px;
+}
+
+.backEndSection {
+  display: flex;
+  margin: 8em 0;
+}
+.backEndText {
+  font-size: 18px;
+  max-width: 500px;
+}
+.backEndExample {
+  background: #141414;
+  margin: 1em;
+  border-radius: 16px;
+  padding: 1em 1em 2em;
+  width: 600px;
+}
+.backEndExampleTitle {
+  display: flex;
+  align-items: center;
+}
+.backEndExampleTitle h2 {
+  margin: 0;
+}
+.backEndExample .code {
+  font-family: monospace;
+}
+
+
+.cards {
+  margin: 4em auto;
+  display: flex;
+  justify-content: space-between;
+}
+.cardsItem {
+  color: #FFF;
+  background: no-repeat;
+  background-size: cover;
+  text-align: center;
+  width: 100%;
+  max-width: 350px;
+  padding: 1em 0;
+  border-radius: 12px;
+  font-size: 20px;
+  box-shadow: 1px 3px 5px -1px rgba(0,0,0,0.4);
+}
+.cardsItem h2 {
+  font-size: 48px;
+  margin: 0;
+}
+.cardsItem p {
+  margin: 0;
+  height: 2.5em;
+}
+.cardsItem .linkRow {
+  /* Improves vertical align a little */
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 1050px) {
+  .topSectionText {
+    margin-bottom: 8em;
+  }
+  .topSectionImage {
+    filter: blur(3px);
+    height: 100vw;
+    bottom: -20%;
+    right: -10%;
+    max-height: unset;
+  }
+  .frontEndText {
+    text-align: left;
+  }
+  .cardsItem {
+    margin: 15px;
+  }
+  .backEndExample {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .topSectionText h1 {
+    font-size: 56px;
+  }
+  .cards {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .frontEndSection::before {
+    background: #F0F0F0;
+  }
+  .backEndExample {
+    background: #F0F0F0;
+  }
+  .evolutionSection {
+    color: #FFF;
+  }
+}

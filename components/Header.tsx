@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import styles from './Header.scss';
+import styles from './Header.module.css';
 
 export type HeaderProps = {
   block?: boolean; // Defaults to absolute
@@ -37,52 +37,55 @@ class Header extends React.Component {
           <span className='flex'/>
           <div className='desktop'>
             <Link href='/about'>
-              <a>About</a>
+              <a>about</a>
             </Link>
             <Link href='/portfolio'>
-              <a>Portfolio</a>
+              <a>portfolio</a>
+            </Link>
+            <Link href='/experimentlist'>
+              <a>experiments</a>
             </Link>
             <Link href='/contact'>
-              <a>Contact</a>
+              <a>contact</a>
             </Link>
           </div>
         </nav>
         <button
           className={styles.headerToggle + ' mobile ' + (this.props.fixedToggle === false ? '' : styles.fixed)}
           onClick={() => this.toggleNav()}>
-          <img src='/static/menu-white.png' />
+          <img src='/static/icons/menu-white.png' />
         </button>
         <nav className={styles.mobileHeader + ' mobile'} style={{display: this.state.mobileNavOpen ? '' : 'none'}}>
           <button
             className={styles.headerClose + ' mobile'}
             onClick={() => this.toggleNav()}
           >
-            <img src='/static/close-white.png' />
+            <img src='/static/icons/close-white.png' />
           </button>
           <ul>
             <li>
               <Link href='/'>
-                <a>Home</a>
+                <a>home</a>
               </Link>
             </li>
             <li>
               <Link href='/about'>
-                <a>About</a>
+                <a>about</a>
               </Link>
             </li>
             <li>
               <Link href='/experiments'>
-                <a>Experiments</a>
+                <a>experiments</a>
               </Link>
             </li>
             <li>
               <Link href='/portfolio'>
-                <a>Portfolio</a>
+                <a>portfolio</a>
               </Link>
             </li>
             <li>
               <Link href='/contact'>
-                <a>Contact</a>
+                <a>contact</a>
               </Link>
             </li>
           </ul>

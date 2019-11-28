@@ -1,0 +1,28 @@
+.errorWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  overflow: hidden;
+  /*color: #FFF;*/
+}
+.errorImage {
+  position: absolute;
+  left: -6px;
+  top: -6px;
+  width: calc(100vw + 12px);
+  height: calc(100vh + 12px);
+  filter: blur(2px) brightness(0.6);
+  object-fit: cover;
+}
+.errorWrapper h1 {
+  margin: 0;
+  font-size: 72px;
+}
+.errorWrapper h2 {
+  margin-top: 0;
+}
+.errorLinks a {
+  margin: 1em;
+}

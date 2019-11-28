@@ -1,0 +1,66 @@
+.nav.mainHeader {
+    display: flex;
+}
+.nav.absolute {
+    z-index: 1;
+    width: 100vw;
+    position: absolute;
+}
+.nav a {
+    font-size: 18px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px 12px;
+    margin: 8px 6px;
+}
+.nav a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.headerToggle, .headerClose {
+    background: rgba(0,0,0,0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40px;
+    width: 40px;
+    right: 10px;
+    top: 10px;
+    z-index: 90;
+    border: none;
+    border-radius: 20px;
+}
+.headerToggle.fixed {
+    position: fixed;
+}
+.headerToggle img, .headerClose img {
+    width: 24px;
+}
+
+.mobileHeader {
+    position: fixed;
+    top: 0;
+    background: linear-gradient(180deg, rgba(0,0,0,0.90) 400px, rgba(0,0,0,0.7) 100%);
+    height: 100vh;
+    width: 100vw;
+    text-align: right;
+    z-index: 90;
+}
+
+.headerClose {
+    position: absolute;
+}
+.mobileHeader ul {
+    margin: 60px 2em;
+}
+.mobileHeader li {
+    list-style: none;
+    padding: 16px 0;
+}
+
+@media (prefers-color-scheme: light) {
+    .mobileHeader {
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.90) 400px, rgba(255, 255, 255, 0.7) 100%);
+    }
+}

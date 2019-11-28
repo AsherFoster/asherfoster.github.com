@@ -3,8 +3,8 @@ import { NextPageContext } from 'next';
 import Link from 'next/link';
 import BasePage from '../components/BasePage';
 import Header from '../components/Header';
-import Footer from '../components/Footer';
-import styles from './_error.scss';
+import Noise from '../components/Noise';
+import styles from './_error.module.css';
 
 export interface ErrorProps {
   statusCode?: number;
@@ -14,20 +14,20 @@ export function ErrorPage({statusCode}: ErrorProps) {
   return (
     <BasePage>
       <Header/>
-      <div className={styles.wrapper}>
+      <div className={styles.errorWrapper}>
+        <Noise className={styles.errorImage} />
         <div>
-          <p className={styles.sadEmoji}>:(</p>
-          <h1>Error {statusCode ? statusCode : 'on client'}</h1>
-          <p className='subtitle'>Something went wrong displaying this page</p>
-          <p className={styles.links}>
-            <a href='#' onClick={() => history.back()}>Back</a>
+          <h1>oops</h1>
+          <h2>error {statusCode ? statusCode : 'on client'}</h2>
+          <p className={styles.errorLinks}>
             <Link href='/'>
               <a>Home</a>
             </Link>
+            //
+            <a href='#' onClick={() => history.back()}>Back</a>
           </p>
         </div>
       </div>
-      <Footer dark />
     </BasePage>
   );
 }

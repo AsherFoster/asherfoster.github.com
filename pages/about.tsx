@@ -3,7 +3,7 @@ import PageLayout from '../components/PageLayout';
 import PageContent from '../components/PageContent';
 
 const Contact = () => (
-  <PageLayout title="Hi, I'm Asher" htmlTitle='About'>
+  <PageLayout title='hello' htmlTitle='About' image='/static/img/me.jpg'>
     <PageContent>
       <p>I'm Asher, a student based in Christchurch, New Zealand. I've been building things with code for about 5 years now.
         Things I've built vary from full stack apps that swamp me with challenges, to simple canvas games such
