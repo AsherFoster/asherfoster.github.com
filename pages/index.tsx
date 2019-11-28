@@ -47,12 +47,15 @@ function Index() {
             </Link>
           </div>
         </div>
-        <img className={styles.topSectionImage} src='/static/img/constellation-bottles.png'/>
+        <picture className={styles.topSectionImage}>
+          <source type='image/webp' srcSet='/static/img/constellation-bottles.webp' />
+          <img src='/static/img/constellation-bottles.png' alt="A bunch of bottles (I swear I'm not an alcoholic)" />
+        </picture>
       </section>
       <section className={styles.frontEndSection}>
         <div className={styles.sectionContent}>
           <div className='flex'> {/* Wrap to fix distortion */}
-            <BrowserImage className={styles.frontEndImage}  src='/static/img/canal.jpg' />
+            <BrowserImage className={styles.frontEndImage}  src='/static/img/canal.jpg' alt='Screenshot of Canal' />
           </div>
           <div className={styles.frontEndText}>
             <h1>front end</h1>

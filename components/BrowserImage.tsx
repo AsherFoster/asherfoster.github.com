@@ -5,6 +5,7 @@ export interface Props {
   chromeColor?: string;
   src?: string;
   children?: React.ReactNode;
+  alt?: string;
 }
 
 function BrowserImage(props: Props) {
@@ -19,7 +20,7 @@ function BrowserImage(props: Props) {
         {/* tslint:enable:max-line-length */}
       </g>
     </svg>
-    {props.src ? (<img src={props.src} style={{width: '100%', display: 'block'}} />) : props.children}
+    {props.src ? (<img src={props.src} style={{width: '100%', display: 'block'}} alt={props.alt} />) : props.children}
   </div>);
 }
 
