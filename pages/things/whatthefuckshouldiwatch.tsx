@@ -13,12 +13,12 @@ const Wtfsiw = () => (
         and just happened to be shown <a href='//www.whatthefuckshouldimakefordinner.com/'>whatthefuckshouldimakefordinner.com/</a> at
         the same time. That's how this crazy project was born.
       </p>
-      <a href='//whatthefuckshouldiwatch.asherfoster.com'>View the live site</a>
+      <a href='//wtfsiw.xyz'>Check it out at wtfsiw.xyz</a>
       <img src='/static/img/wtfsiw.jpg' style={{display: 'block', margin: 'auto'}} />
       <p>It's built with a dataset sourced from TMDb, who have a really handy API for this sort of thing.</p>
       <h2>Technical things</h2>
       <p>Front End: Vue.js. Back End: Express, Node.js, and SQLite. Hosted on Google App Engine</p>
-      <a href='//github.com/asherfoster.com/wtfsiw'>It's on GitHub!</a>
+      <a href='//github.com/asherfoster/wtfsiw'>It's on GitHub!</a>
     </PageContent>
   </PageLayout>
 );

@@ -39,7 +39,7 @@ const portfolioItems: PortfolioItem[] = [
     description: 'a nzqa assesment taken too far',
     img: '/static/projects/wtfsiw.jpg',
     links: [
-      ['web', '//whatthefuckshouldiwatch.asherfoster.com'],
+      ['web', '//wtfsiw.xyz'],
       ['github', '//github.com/asherfoster/wtfsiw']
     ]
   },

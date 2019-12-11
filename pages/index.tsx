@@ -19,7 +19,7 @@ function Index() {
   async function runExample() {
     setLoading(true);
     try {
-      const r = await fetch('https://wtfsiw.asherfoster.com/movie');
+      const r = await fetch('https://wtfsiw.xyz/movie');
       const j = await r.json();
       setMovie({
         movie_id: j.movie_id,
@@ -99,7 +99,7 @@ function Index() {
           <div className='flex'/>
           <div className={styles.backEndExample}>
             <div className={styles.backEndExampleTitle}>
-              <h2>GET wtfsiw.asherfoster.com/movie</h2>
+              <h2>GET wtfsiw.xyz/movie</h2>
               <span className='flex'/>
               <button onClick={() => loading || runExample()} className='button button__subtle'>{loading ? 'loading' : 'try it'}</button>
             </div>
