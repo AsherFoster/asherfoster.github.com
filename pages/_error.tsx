@@ -33,7 +33,7 @@ export function ErrorPage({statusCode}: ErrorProps) {
 }
 
 ErrorPage.getInitialProps = ({ res, err }: NextPageContext): ErrorProps => {
-  const statusCode = res ? res.statusCode : err ? (err as any).statusCode : null;
+  const statusCode = res ? res.statusCode : err ? (err as any).statusCode : 404;
   return { statusCode };
 };
 
