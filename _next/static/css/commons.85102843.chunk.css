@@ -2,7 +2,7 @@
     display: flex;
 }
 .nav___3dWJo.absolute___2ovze {
-    z-index: 1;
+    z-index: 90;
     width: 100vw;
     position: absolute;
 }
@@ -27,7 +27,7 @@
     width: 40px;
     right: 10px;
     top: 10px;
-    z-index: 90;
+    z-index: 99;
     border: none;
     border-radius: 20px;
 }
