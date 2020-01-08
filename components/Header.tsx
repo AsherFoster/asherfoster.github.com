@@ -30,7 +30,7 @@ class Header extends React.Component {
           {
             this.props.hideName ? null : (
               <Link href='/'>
-                <a className='nounderline'>Asher Foster</a>
+                <a className='nounderline'>asher foster</a>
               </Link>
             )
           }

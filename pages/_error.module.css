@@ -5,24 +5,22 @@
   height: 100vh;
   text-align: center;
   overflow: hidden;
-  /*color: #FFF;*/
 }
 .errorImage {
-  position: absolute;
-  left: -6px;
-  top: -6px;
-  width: calc(100vw + 12px);
-  height: calc(100vh + 12px);
-  filter: blur(2px) brightness(0.6);
-  object-fit: cover;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
 }
 .errorWrapper h1 {
   margin: 0;
-  font-size: 72px;
+  font-size: 300px;
+  line-height: 300px;
+  mix-blend-mode: difference;
 }
 .errorWrapper h2 {
-  margin-top: 0;
-}
-.errorLinks a {
-  margin: 1em;
+  margin: 0;
+  font-size: 70px;
+  mix-blend-mode: difference;
 }
