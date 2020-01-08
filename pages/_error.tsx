@@ -1,6 +1,5 @@
 import React from 'react';
 import { NextPageContext } from 'next';
-import Link from 'next/link';
 import BasePage from '../components/BasePage';
 import Header from '../components/Header';
 import styles from './_error.module.css';
@@ -12,8 +11,8 @@ export interface ErrorProps {
 
 export function ErrorPage({statusCode}: ErrorProps) {
   return (
-    <BasePage>
-      <Header/>
+    <BasePage dark>
+      <Header />
       <div className={styles.errorWrapper}>
         <Stars className={styles.errorImage} />
         <div>

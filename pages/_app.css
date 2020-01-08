@@ -87,7 +87,7 @@ a:global(.link__arrow)::after {
 }
 
 @media (prefers-color-scheme: light) {
-    html {
+    body:not(:global(.dark)) { /* Style html as long as the body tag isn't .dark */
         background: #FFF;
         color: #000;
     }
@@ -95,10 +95,10 @@ a:global(.link__arrow)::after {
         background: rgba(0,0,0,0.1);
         color: #000;
     }
-    :global(.only-dark) {
+    body:not(:global(.dark)) :global(.only-dark) {
         display: none;
     }
-    :global(.only-light) {
+    body:not(:global(.dark)) :global(.only-light) {
         display: block !important;
     }
 }
