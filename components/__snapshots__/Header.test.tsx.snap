@@ -1,0 +1,249 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header isn't borked 1`] = `
+Array [
+  <nav
+    className="undefined undefined undefined"
+  >
+    <a
+      className="nounderline"
+      href="/"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+    >
+      asher foster
+    </a>
+    <span
+      className="flex"
+    />
+    <div
+      className="desktop"
+    >
+      <a
+        href="/about"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        about
+      </a>
+      <a
+        href="/portfolio"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        portfolio
+      </a>
+      <a
+        href="/experimentlist"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        experiments
+      </a>
+      <a
+        href="/contact"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        contact
+      </a>
+    </div>
+  </nav>,
+  <button
+    aria-label="Open menu"
+    className="undefined mobile undefined"
+    onClick={[Function]}
+  >
+    <img
+      alt=""
+      src="/static/icons/menu-white.png"
+    />
+  </button>,
+  <nav
+    className="undefined mobile"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <button
+      aria-label="Close menu"
+      className="undefined mobile"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="/static/icons/close-white.png"
+      />
+    </button>
+    <ul>
+      <li>
+        <a
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/about"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          about
+        </a>
+      </li>
+      <li>
+        <a
+          href="/experiments"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          experiments
+        </a>
+      </li>
+      <li>
+        <a
+          href="/portfolio"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          portfolio
+        </a>
+      </li>
+      <li>
+        <a
+          href="/contact"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          contact
+        </a>
+      </li>
+    </ul>
+  </nav>,
+]
+`;
+
+exports[`Name doesn't show when hidden 1`] = `
+Array [
+  <nav
+    className="undefined undefined undefined"
+  >
+    <span
+      className="flex"
+    />
+    <div
+      className="desktop"
+    >
+      <a
+        href="/about"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        about
+      </a>
+      <a
+        href="/portfolio"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        portfolio
+      </a>
+      <a
+        href="/experimentlist"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        experiments
+      </a>
+      <a
+        href="/contact"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        contact
+      </a>
+    </div>
+  </nav>,
+  <button
+    aria-label="Open menu"
+    className="undefined mobile undefined"
+    onClick={[Function]}
+  >
+    <img
+      alt=""
+      src="/static/icons/menu-white.png"
+    />
+  </button>,
+  <nav
+    className="undefined mobile"
+    style={
+      Object {
+        "display": "none",
+      }
+    }
+  >
+    <button
+      aria-label="Close menu"
+      className="undefined mobile"
+      onClick={[Function]}
+    >
+      <img
+        alt=""
+        src="/static/icons/close-white.png"
+      />
+    </button>
+    <ul>
+      <li>
+        <a
+          href="/"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          home
+        </a>
+      </li>
+      <li>
+        <a
+          href="/about"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          about
+        </a>
+      </li>
+      <li>
+        <a
+          href="/experiments"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          experiments
+        </a>
+      </li>
+      <li>
+        <a
+          href="/portfolio"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          portfolio
+        </a>
+      </li>
+      <li>
+        <a
+          href="/contact"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+        >
+          contact
+        </a>
+      </li>
+    </ul>
+  </nav>,
+]
+`;
