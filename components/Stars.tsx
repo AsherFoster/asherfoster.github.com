@@ -52,31 +52,26 @@ function Stars(props) {
       if (s[0] > canvas.width + 10 || s[1] > canvas.height + 10) scene.delete(s);
     });
   }
-  function setup() {
-    canvas = canvasRef.current;
-    ctx = canvas.getContext('2d');
-    resize();
+  function layout() {
+    canvas.height = canvas.offsetHeight;
+    canvas.width = canvas.offsetWidth;
+    // Populate
+    scene.clear();
     for (let i = 0; i < (canvas.offsetWidth * canvas.offsetHeight / 10000); i++) {
       scene.add([Math.random() * canvas.width, Math.random() * canvas.height, Math.random()]);
     }
   }
-  function resize() {
-    canvas.height = canvas.offsetHeight;
-    canvas.width = canvas.offsetWidth;
-  }
 
   useEffect(() => {
-    window.addEventListener('resize', resize);
-    setup();
+    canvas = canvasRef.current;
+    ctx = canvas.getContext('2d');
+    window.addEventListener('resize', layout);
+    layout();
     render();
-    return () => {
-      hasStopped = true;
-      window.removeEventListener('resize', resize);
-    };
-  });
-  useEffect(() => {
     let crunchTimer = setInterval(crunch, SPAWN_FREQ);
     return () => {
+      hasStopped = true;
+      window.removeEventListener('resize', layout);
       clearInterval(crunchTimer);
     };
   });

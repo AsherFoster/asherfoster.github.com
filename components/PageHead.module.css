@@ -22,12 +22,13 @@
   width: calc(0.23086 * 350px);
   transform: skew(-13deg);
   left: calc(-0.23086 * 350px / 2);
+  z-index: 1;
 }
 .heroImage {
   min-height: calc(6px + 100%);
   min-width: calc(6px + 100%);
   width: 101%;
-  z-index: -1;
+  z-index: 0;
   position: absolute;
   right: -3px;
   top: -3px;
