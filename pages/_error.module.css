@@ -15,13 +15,13 @@
   height: 100vh;
 }
 .errorWrapper h1 {
-  margin: 0;
-  font-size: 50vmin;
-  line-height: 50vmin;
+  font-size: 40vmin;
   mix-blend-mode: difference;
 }
-.errorWrapper h2 {
-  margin: 0;
-  font-size: 70px;
+.errorInfo {
+  position: fixed;
+  bottom: 0;
+  font-size: 2em;
+  margin-bottom: 0.5em;
   mix-blend-mode: difference;
 }

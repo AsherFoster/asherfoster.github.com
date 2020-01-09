@@ -16,9 +16,9 @@ export function ErrorPage({statusCode}: ErrorProps) {
       <div className={styles.errorWrapper}>
         <Stars className={styles.errorImage} />
         <div>
-          <h1>oops</h1>
-          <h2>error {statusCode ? statusCode : 'on client'}</h2>
+          <h1>{statusCode === 404 ? 404 : 'oops'}</h1>
         </div>
+        {statusCode !== 404 && <h2 className={styles.errorInfo}>error {statusCode ? statusCode : 'on client'}</h2>}
       </div>
     </BasePage>
   );
