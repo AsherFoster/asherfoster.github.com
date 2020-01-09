@@ -120,14 +120,14 @@ a.link__arrow::after {
   height: 100vh;
 }
 .errorWrapper___3cHK9 h1 {
-  margin: 0;
-  font-size: 50vmin;
-  line-height: 50vmin;
+  font-size: 40vmin;
   mix-blend-mode: difference;
 }
-.errorWrapper___3cHK9 h2 {
-  margin: 0;
-  font-size: 70px;
+.errorInfo___1Coss {
+  position: fixed;
+  bottom: 0;
+  font-size: 2em;
+  margin-bottom: 0.5em;
   mix-blend-mode: difference;
 }
 
