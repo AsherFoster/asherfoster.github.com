@@ -4,7 +4,8 @@ exports[`Footer isn't borked 1`] = `
 <footer>
   <div>
     <p>
-      © Asher Foster 2019
+      © Asher Foster 
+      2020
     </p>
     <span
       className="flex"
