@@ -5,13 +5,11 @@
     position: relative;
 }
 
-html {
+body {
     background: #222;
     font-family: 'Nunito Sans', 'Arial', sans-serif;
     color: #FFF;
     transition: background-color 0.5s, color 0.5s;
-}
-html, body {
     margin: 0;
     overflow-x: hidden;
 }
