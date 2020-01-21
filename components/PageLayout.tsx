@@ -19,7 +19,7 @@ const PageLayout = (props: PageLayoutProps) => {
   return (
     <React.Fragment>
       <Head>
-        <title>Asher Foster - {props.htmlTitle || props.title}</title>
+        <title>asher foster - {props.htmlTitle || props.title}</title>
         <meta name='description'
               content={
                 props.description ?

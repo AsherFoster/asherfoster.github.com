@@ -16,7 +16,7 @@ const BasePage = (props: {children: any, dark?: boolean}) => {
   return (
     <React.Fragment>
       <Head>
-        <title>Asher Foster</title>
+        <title>asher foster</title>
       </Head>
       {props.children}
     </React.Fragment>

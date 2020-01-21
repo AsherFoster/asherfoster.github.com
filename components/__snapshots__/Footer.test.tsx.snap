@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer isn't borked 1`] = `
+<footer>
+  <div>
+    <p>
+      © Asher Foster 2019
+    </p>
+    <span
+      className="flex"
+    />
+    <div>
+      <a
+        href="/"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Home
+      </a>
+      <a
+        href="//github.com/AsherFoster"
+      >
+        Github
+      </a>
+      <a
+        href="/contact"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+      >
+        Contact
+      </a>
+    </div>
+  </div>
+</footer>
+`;

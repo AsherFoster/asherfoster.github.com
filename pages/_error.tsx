@@ -12,7 +12,7 @@ export interface ErrorProps {
 export function ErrorPage({statusCode}: ErrorProps) {
   return (
     <BasePage dark>
-      <Header />
+      <Header clear />
       <div className={styles.errorWrapper}>
         <Stars className={styles.errorImage} />
         <div>
