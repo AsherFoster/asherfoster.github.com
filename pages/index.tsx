@@ -40,6 +40,10 @@ function Index() {
       </Head>
       <Header hideName={true}/>
       <section className={styles.topSection}>
+        <picture className={styles.topSectionImage}>
+          <source type='image/webp' srcSet='/static/img/constellation-bottles.webp' />
+          <img src='/static/img/constellation-bottles.png' alt="A bunch of bottles (I swear I'm not an alcoholic)" />
+        </picture>
         <div className={styles.sectionContent}>
           <div className={styles.topSectionText}>
             <h1>asher foster</h1>
@@ -49,10 +53,6 @@ function Index() {
             </Link>
           </div>
         </div>
-        <picture className={styles.topSectionImage}>
-          <source type='image/webp' srcSet='/static/img/constellation-bottles.webp' />
-          <img src='/static/img/constellation-bottles.png' alt="A bunch of bottles (I swear I'm not an alcoholic)" />
-        </picture>
       </section>
       <section className={styles.frontEndSection}>
         <div className={styles.sectionContent}>
