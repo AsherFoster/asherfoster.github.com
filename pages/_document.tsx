@@ -1,6 +1,5 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
-import {GA_TRACKING_ID} from '../lib/gtag';
 import '../lib/sentry';
 
 export default class MyDocument extends Document {
@@ -8,21 +7,9 @@ export default class MyDocument extends Document {
     return (
       <html lang='en-NZ'>
         <Head>
-          {/* Global Site Tag (gtag.js) - Google Analytics */}
-          <script
-            async
-            src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-          />
-          <script
-            dangerouslySetInnerHTML={{
-              __html: `
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${GA_TRACKING_ID}');
-              `
-            }}
-          />
+          {/* Simple Analytics tracking code */}
+          <script async defer src='https://cdn.simpleanalytics.io/hello.js' />
+          <noscript><img src='https://api.simpleanalytics.io/hello.gif' alt='' /></noscript>
           <meta name='viewport' content='width=device-width, initial-scale=1'/>
         </Head>
         <body>
