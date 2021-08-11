@@ -1,0 +1,55 @@
+@font-face {
+    font-family: 'Metropolis';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/assets/font/metropolis-medium.woff2') format('woff2');
+}
+
+:root {
+    /* COLORS */
+    --color-light: #FFF;
+    --color-light-rgb: 255, 255, 255;
+    --color-dark: #333333;
+    --color-dark-rgb: 51, 51, 51;
+    --color-primary: #222222;
+    --color-priamry-rgb: 34, 34, 34;
+    --color-accent: #FF4081;
+    --color-accent-rgb: 255, 64, 129;
+
+    /* SIZES */
+    --size-base-size: 16px;
+    --size-content-width: 54rem;
+    --size-content-padding: 1rem;
+
+    /* TYPOGRAPHY */
+    --font-body: 'IBM Plex Sans', 'Roboto', 'Arial', sans-serif;
+    --font-heading: 'Metropolis', 'Roboto', 'Arial', sans-serif;
+
+    font-family: var(--font-body);
+    font-size: var(--size-base-size);
+    color: var(--color-light);
+}
+body {
+    margin: 0;
+    background: var(--color-dark);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-size: 1rem;
+    font-weight: 400;
+    margin: 1rem 0;
+}
+h1 {
+    font-size: 3.5rem;
+}
+h2 {
+    font-size: 2.5rem;
+}
+h3 {
+    font-size: 2rem;
+}
+h4 {
+    font-size: 1.5rem;
+}

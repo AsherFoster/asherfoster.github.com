@@ -1,0 +1,24 @@
+.nav {
+    position: fixed;
+    width: 100%;
+    z-index: 10;
+}
+.navContent {
+    display: flex;
+    max-width: var(--size-content-width);
+    padding: 0 var(--size-content-padding);
+    margin: auto;
+    justify-content: flex-end;
+    align-items: center;
+}
+.navContent a {
+    color: #FFF;
+    text-decoration: none;
+    display: block;
+    padding: 1rem 0.5rem;
+    font-family: var(--font-heading);
+}
+.iconLink {
+    width: 1.5rem;
+    height: 1.5rem;
+}
